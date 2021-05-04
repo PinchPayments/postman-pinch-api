@@ -1,20 +1,22 @@
-# Postman Collection to access the [Pinch Payments](https://getpinch.com.au) API
+# Postman Collection to access the Pinch Payments API
+
+![image](https://user-images.githubusercontent.com/241857/116962566-a6291600-ace9-11eb-9084-d0e303274f4f.png)
 
 This is a Postman Collection for the Pinch API v2020.1 endpoints. 
 
-Refer to the main [Pinch API documentation](hhttps://docs.getpinch.com.au/docs) for more details.
+Refer to the main [Pinch API documentation](https://docs.getpinch.com.au/docs) for more details.
 
 ## Installation
 
-You can download this Collection from a GitHub repo here: [https://github.com/pinchpayments/postman-pinch-api](https://github.com/pinchpayments/postman-pinch-api)
+Download, install and run Postman from the website [https://www.postman.com/downloads/](https://www.postman.com/downloads/)
 
-Import to the Postman by opening the app, selecting `File -> Import` and importing the `Pinch API v2020.1.postman_collection.json` and the `Pinch API v2020.1.postman_environment.json` files.
+Import into the Postman app by selecting `File -> Import` and importing the [Pinch API v2020.1.postman_collection.json](https://raw.githubusercontent.com/PinchPayments/postman-pinch-api/main/Pinch%20API%20v2020.1.postman_collection.json) and [Pinch API v2020.1.postman_environment.json](https://raw.githubusercontent.com/PinchPayments/postman-pinch-api/main/Pinch%20API%20v2020.1.postman_environment.json) files from this repository.
 
 ## Environment
 
-Visit [https://web.getpinch.com.au/api-keys](https://web.getpinch.com.au/api-keys) to get your test & production API keys
+Visit [https://web.getpinch.com.au/api-keys](https://web.getpinch.com.au/api-keys) to get your test & production API keys.
 
-This Collection includes a pre-configured Environment. You will need to set up the following environment variables in order to run each request:
+This Collection includes a pre-configured Environment. You will need to set up the following environment variables to the `Current Value` column in order to run each request:
 
 |Name|Description|
 |---|---|
