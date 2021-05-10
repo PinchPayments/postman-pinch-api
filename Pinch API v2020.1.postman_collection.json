@@ -1746,12 +1746,12 @@
 							"query": [
 								{
 									"key": "page",
-									"value": null,
+									"value": "",
 									"description": "The current page"
 								},
 								{
 									"key": "pageSize",
-									"value": null,
+									"value": "",
 									"description": "How many items to return for each page"
 								}
 							]
@@ -1847,12 +1847,12 @@
 							"query": [
 								{
 									"key": "page",
-									"value": null,
+									"value": "",
 									"description": "The current page"
 								},
 								{
 									"key": "pageSize",
-									"value": null,
+									"value": "",
 									"description": "How many items to return for each page"
 								}
 							]
@@ -1950,7 +1950,7 @@
 								{
 									"key": "id",
 									"value": "",
-									"description": "Payment Id in pry_XXXXXXXXXXXXXX format"
+									"description": "Payment Id in pyr_XXXXXXXXXXXXXX format"
 								}
 							]
 						}
@@ -2959,11 +2959,11 @@
 								},
 								{
 									"key": "skip",
-									"value": null
+									"value": ""
 								},
 								{
 									"key": "limit",
-									"value": null
+									"value": ""
 								}
 							]
 						}
@@ -3811,7 +3811,7 @@
 					]
 				},
 				{
-					"name": "List Merchants",
+					"name": "Get Merchant",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -4137,19 +4137,19 @@
 							"query": [
 								{
 									"key": "page",
-									"value": null
+									"value": ""
 								},
 								{
 									"key": "pageSize",
-									"value": null
+									"value": ""
 								},
 								{
 									"key": "startDate",
-									"value": null
+									"value": ""
 								},
 								{
 									"key": "endDate",
-									"value": null
+									"value": ""
 								},
 								{
 									"key": "eventType",
@@ -4803,227 +4803,138 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "400 Bad Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"token\": \"\",\r\n    \"sourceId\": \"\",\r\n    \"sourceType\": \"\",\r\n    \"amount\": 0,\r\n    \"applicationFee\": 0,\r\n    \"currency\": \"\",\r\n    \"surcharge\": [\"\"]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/{{environment}}/fees/calculate",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"{{environment}}",
+										"fees",
+										"calculate"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "262"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "Request-Context",
+									"value": "appId=cid-v1:833acf35-1857-4bdc-9a45-7dac6de724f0"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 05 May 2021 08:43:32 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"propertyName\": \"\",\n        \"errorMessage\": \"You must supply one of either: Token, SourceId, SourceType\",\n        \"attemptedValue\": null,\n        \"customState\": null,\n        \"severity\": 0,\n        \"errorCode\": null,\n        \"formattedMessageArguments\": null,\n        \"formattedMessagePlaceholderValues\": null,\n        \"resourceName\": null\n    }\n]"
+						},
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"token\": \"tkn_aLwsea6Cr9tgVYt4nihjxrwqvjB3iXlD\",\r\n    \"sourceId\": \"\",\r\n    \"sourceType\": \"\",\r\n    \"amount\": 100,\r\n    \"applicationFee\": 0,\r\n    \"currency\": \"\",\r\n    \"surcharge\": [\"\"]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/{{environment}}/fees/calculate",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"{{environment}}",
+										"fees",
+										"calculate"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "588"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "Request-Context",
+									"value": "appId=cid-v1:833acf35-1857-4bdc-9a45-7dac6de724f0"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 05 May 2021 08:44:53 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"amount\": 100,\n    \"currency\": \"AUD\",\n    \"netAmount\": 67,\n    \"isSurcharged\": false,\n    \"convertedAmount\": null,\n    \"convertedCurrency\": null,\n    \"convertedNetAmount\": null,\n    \"fees\": {\n        \"transactionFee\": 33,\n        \"applicationFee\": 0,\n        \"totalFee\": 33,\n        \"currency\": \"AUD\",\n        \"taxRate\": 0.1,\n        \"convertedTransactionFee\": null,\n        \"convertedApplicationFee\": null,\n        \"convertedTotalFee\": null,\n        \"convertedCurrency\": null,\n        \"conversionRate\": null\n    },\n    \"source\": {\n        \"id\": null,\n        \"sourceType\": \"credit-card\",\n        \"bankAccountNumber\": null,\n        \"bankAccountBsb\": null,\n        \"bankAccountName\": null,\n        \"creditCardToken\": \"tkn_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\",\n        \"cardHolderName\": \"Ben Hotdog\",\n        \"expiryDate\": \"2022-12-01T00:00:00\",\n        \"displayCardNumber\": \"4242\",\n        \"cardScheme\": \"visa\",\n        \"origin\": \"AU\",\n        \"funding\": \"credit\"\n    },\n    \"feeSchedule\": {\n        \"destinationZone\": \"AU\",\n        \"originZone\": \"AU\",\n        \"feeScheme\": \"visa-master\",\n        \"percentageFee\": 0.025,\n        \"fixedFee\": 30,\n        \"cap\": 0,\n        \"dishonourFee\": 0,\n        \"disputeFee\": 3500\n    }\n}"
+						}
+					]
 				}
 			]
 		},
 		{
 			"name": "Webhooks",
 			"item": [
-				{
-					"name": "List Webhooks",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}/{{environment}}/webhooks",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"{{environment}}",
-								"webhooks"
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "200 OK",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/{{environment}}/webhooks",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"{{environment}}",
-										"webhooks"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Content-Length",
-									"value": "145"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Server",
-									"value": "Microsoft-IIS/10.0"
-								},
-								{
-									"key": "Request-Context",
-									"value": "appId="
-								},
-								{
-									"key": "X-SourceFiles",
-									"value": "=?UTF-8?B?QzpcRGV2XEFwcHNcUGluY2hcUGluY2hcc3JjXFBpbmNoLkFwaVx0ZXN0XHdlYmhvb2tz?="
-								},
-								{
-									"key": "X-Powered-By",
-									"value": "ASP.NET"
-								},
-								{
-									"key": "Date",
-									"value": "Fri, 30 Apr 2021 03:38:33 GMT"
-								}
-							],
-							"cookie": [],
-							"body": "[\n    {\n        \"id\": \"wbk_XXXXXXXXXXXXXX\",\n        \"uri\": \"https://example.com/callback\",\n        \"secret\": \"whsec_XXXXXXXXXXXXXXXXXXXXXXXXXXXX\"\n    }\n]"
-						}
-					]
-				},
-				{
-					"name": "Get Webhook",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}/{{environment}}/webhooks/:id",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"{{environment}}",
-								"webhooks",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id",
-									"value": "",
-									"description": "Webhook Id in wbk_XXXXXXXXXXXXXX format"
-								}
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "200 OK",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/{{environment}}/webhooks/:id",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"{{environment}}",
-										"webhooks",
-										":id"
-									],
-									"variable": [
-										{
-											"key": "id",
-											"value": "wbk_XXXXXXXXXXXXXX",
-											"description": "Webhook Id in wbk_XXXXXXXXXXXXXX format"
-										}
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Content-Length",
-									"value": "143"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Server",
-									"value": "Microsoft-IIS/10.0"
-								},
-								{
-									"key": "Request-Context",
-									"value": "appId=cid-v1:7a9feec7-06e6-4091-a7d8-f6f4ef30d688"
-								},
-								{
-									"key": "X-SourceFiles",
-									"value": "=?UTF-8?B?QzpcRGV2XEFwcHNcUGluY2hcUGluY2hcc3JjXFBpbmNoLkFwaVx0ZXN0XHdlYmhvb2tzXHdia19qbkxtTEdUMksycXVQaQ==?="
-								},
-								{
-									"key": "X-Powered-By",
-									"value": "ASP.NET"
-								},
-								{
-									"key": "Date",
-									"value": "Fri, 30 Apr 2021 03:42:30 GMT"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"id\": \"wbk_XXXXXXXXXXXXXX\",\n    \"uri\": \"https://example.com/callback\",\n    \"secret\": \"whsec_XXXXXXXXXXXXXXXXXXXXXXXXXXXX\"\n}"
-						},
-						{
-							"name": "404 Not found",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/{{environment}}/webhooks/:id",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"{{environment}}",
-										"webhooks",
-										":id"
-									],
-									"variable": [
-										{
-											"key": "id",
-											"value": "wbk_jnLmLGT2K2quPr",
-											"description": "Webhook Id in wbk_XXXXXXXXXXXXXX format"
-										}
-									]
-								}
-							},
-							"status": "Not Found",
-							"code": 404,
-							"_postman_previewlanguage": "plain",
-							"header": [
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Server",
-									"value": "Microsoft-IIS/10.0"
-								},
-								{
-									"key": "Request-Context",
-									"value": "appId=cid-v1:7a9feec7-06e6-4091-a7d8-f6f4ef30d688"
-								},
-								{
-									"key": "X-SourceFiles",
-									"value": "=?UTF-8?B?QzpcRGV2XEFwcHNcUGluY2hcUGluY2hcc3JjXFBpbmNoLkFwaVx0ZXN0XHdlYmhvb2tzXHdia19qbkxtTEdUMksycXVQcg==?="
-								},
-								{
-									"key": "X-Powered-By",
-									"value": "ASP.NET"
-								},
-								{
-									"key": "Date",
-									"value": "Fri, 30 Apr 2021 03:44:04 GMT"
-								}
-							],
-							"cookie": [],
-							"body": ""
-						}
-					]
-				},
 				{
 					"name": "Create or Update Webhook",
 					"request": {
@@ -5236,6 +5147,220 @@
 							],
 							"cookie": [],
 							"body": "[\n    {\n        \"propertyName\": \"Uri\",\n        \"errorMessage\": \"'Uri' must not be empty.\",\n        \"attemptedValue\": \"\",\n        \"customState\": null,\n        \"severity\": 0,\n        \"errorCode\": \"NotEmptyValidator\",\n        \"formattedMessageArguments\": [],\n        \"formattedMessagePlaceholderValues\": {\n            \"PropertyName\": \"Uri\",\n            \"PropertyValue\": \"\"\n        },\n        \"resourceName\": \"NotEmptyValidator\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "List Webhooks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/{{environment}}/webhooks",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"{{environment}}",
+								"webhooks"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/{{environment}}/webhooks",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"{{environment}}",
+										"webhooks"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "145"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "Request-Context",
+									"value": "appId="
+								},
+								{
+									"key": "X-SourceFiles",
+									"value": "=?UTF-8?B?QzpcRGV2XEFwcHNcUGluY2hcUGluY2hcc3JjXFBpbmNoLkFwaVx0ZXN0XHdlYmhvb2tz?="
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 30 Apr 2021 03:38:33 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"wbk_XXXXXXXXXXXXXX\",\n        \"uri\": \"https://example.com/callback\",\n        \"secret\": \"whsec_XXXXXXXXXXXXXXXXXXXXXXXXXXXX\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Get Webhook",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/{{environment}}/webhooks/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"{{environment}}",
+								"webhooks",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "",
+									"description": "Webhook Id in wbk_XXXXXXXXXXXXXX format"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/{{environment}}/webhooks/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"{{environment}}",
+										"webhooks",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "wbk_XXXXXXXXXXXXXX",
+											"description": "Webhook Id in wbk_XXXXXXXXXXXXXX format"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "143"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "Request-Context",
+									"value": "appId=cid-v1:7a9feec7-06e6-4091-a7d8-f6f4ef30d688"
+								},
+								{
+									"key": "X-SourceFiles",
+									"value": "=?UTF-8?B?QzpcRGV2XEFwcHNcUGluY2hcUGluY2hcc3JjXFBpbmNoLkFwaVx0ZXN0XHdlYmhvb2tzXHdia19qbkxtTEdUMksycXVQaQ==?="
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 30 Apr 2021 03:42:30 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"wbk_XXXXXXXXXXXXXX\",\n    \"uri\": \"https://example.com/callback\",\n    \"secret\": \"whsec_XXXXXXXXXXXXXXXXXXXXXXXXXXXX\"\n}"
+						},
+						{
+							"name": "404 Not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/{{environment}}/webhooks/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"{{environment}}",
+										"webhooks",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "",
+											"description": "Webhook Id in wbk_XXXXXXXXXXXXXX format"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "Request-Context",
+									"value": "appId=cid-v1:7a9feec7-06e6-4091-a7d8-f6f4ef30d688"
+								},
+								{
+									"key": "X-SourceFiles",
+									"value": "=?UTF-8?B?QzpcRGV2XEFwcHNcUGluY2hcUGluY2hcc3JjXFBpbmNoLkFwaVx0ZXN0XHdlYmhvb2tzXHdia19qbkxtTEdUMksycXVQcg==?="
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 30 Apr 2021 03:44:04 GMT"
+								}
+							],
+							"cookie": [],
+							"body": ""
 						}
 					]
 				},
