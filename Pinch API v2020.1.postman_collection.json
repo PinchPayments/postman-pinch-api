@@ -2407,6 +2407,162 @@
 							"body": "{\n    \"errorMessages\": [\n        {\n            \"propertyName\": \"paymentId\",\n            \"errorMessage\": \"Payment with id: pmt_XXXXXXXXXXXXXX not found\",\n            \"attemptedValue\": null,\n            \"customState\": null,\n            \"severity\": 0,\n            \"errorCode\": null,\n            \"formattedMessageArguments\": null,\n            \"formattedMessagePlaceholderValues\": null,\n            \"resourceName\": null\n        }\n    ],\n    \"successful\": false\n}"
 						}
 					]
+				},
+				{
+					"name": "Check for Nonce",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nonce\": \"test1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/{{environment}}/payments/nonce",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"{{environment}}",
+								"payments",
+								"nonce"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK - Nonce Exists",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nonce\": \"601cfd9b-9af8-4809-9cd3-69884c49b153\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/{{environment}}/payments/nonce",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"{{environment}}",
+										"payments",
+										"nonce"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "1376"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "Request-Context",
+									"value": "appId=cid-v1:7a9feec7-06e6-4091-a7d8-f6f4ef30d688"
+								},
+								{
+									"key": "X-SourceFiles",
+									"value": "=?UTF-8?B?QzpcRGV2XEFwcHNcUGluY2hcUGluY2hcc3JjXFBpbmNoLkFwaVx0ZXN0XHBheW1lbnRzXG5vbmNl?="
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 May 2021 04:31:15 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"isNonceReplay\": true,\n    \"id\": \"pmt_XXXXXXXXXXXXXX\",\n    \"attemptId\": \"att_XXXXXXXXX\",\n    \"amount\": 1000,\n    \"currency\": \"AUD\",\n    \"description\": \"Omnis magnam tempora necessitatibus quisquam.\",\n    \"applicationFee\": 0,\n    \"totalFee\": 55,\n    \"isSurcharged\": false,\n    \"sourceType\": \"credit-card\",\n    \"transactionDate\": \"2021-05-11T04:30:32.5107634Z\",\n    \"status\": \"approved\",\n    \"estimatedTransferDate\": \"2021-05-13\",\n    \"actualTransferDate\": null,\n    \"payer\": {\n        \"id\": \"pyr_XXXXXXXXXXXXXX\",\n        \"firstName\": \"Alex\",\n        \"lastName\": \"Fadel\",\n        \"emailAddress\": \"Willis_Wyman@example.com\",\n        \"mobileNumber\": null,\n        \"streetAddress\": null,\n        \"suburb\": null,\n        \"postcode\": null,\n        \"state\": null,\n        \"country\": null,\n        \"companyName\": null,\n        \"companyRegistrationNumber\": null,\n        \"metadata\": null\n    },\n    \"subscription\": null,\n    \"attempts\": [\n        {\n            \"id\": \"att_XXXXXXXX\",\n            \"amount\": 1000,\n            \"currency\": \"AUD\",\n            \"convertedAmount\": null,\n            \"conversionRate\": null,\n            \"convertedCurrency\": null,\n            \"estimatedSettlementDate\": \"2021-05-13T00:00:00\",\n            \"isSurcharged\": false,\n            \"transactionDate\": \"2021-05-11T04:30:32.5107634Z\",\n            \"estimatedTransferDate\": \"2021-05-13\",\n            \"actualTransferDate\": null,\n            \"source\": null,\n            \"dishonour\": null,\n            \"settlement\": null,\n            \"fees\": {\n                \"transactionFee\": 55,\n                \"applicationFee\": 0,\n                \"totalFee\": 55,\n                \"currency\": \"AUD\",\n                \"taxRate\": 0.1,\n                \"convertedTransactionFee\": null,\n                \"convertedApplicationFee\": null,\n                \"convertedTotalFee\": null,\n                \"convertedCurrency\": null,\n                \"conversionRate\": null\n            },\n            \"status\": \"approved\"\n        }\n    ],\n    \"refunds\": [],\n    \"metadata\": null,\n    \"nonce\": \"601cfd9b-9af8-4809-9cd3-69884c49b153\"\n}"
+						},
+						{
+							"name": "200 OK - Nonce Doesn't Exist",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nonce\": \"test456\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/{{environment}}/payments/nonce",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"{{environment}}",
+										"payments",
+										"nonce"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "41"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "Request-Context",
+									"value": "appId=cid-v1:7a9feec7-06e6-4091-a7d8-f6f4ef30d688"
+								},
+								{
+									"key": "X-SourceFiles",
+									"value": "=?UTF-8?B?QzpcRGV2XEFwcHNcUGluY2hcUGluY2hcc3JjXFBpbmNoLkFwaVx0ZXN0XHBheW1lbnRzXG5vbmNl?="
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 May 2021 04:32:51 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"isNonceReplay\": false,\n    \"nonce\": \"test456\"\n}"
+						}
+					]
 				}
 			]
 		},
@@ -5877,6 +6033,220 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"isNonceReplay\": false,\n    \"id\": \"ref_XXXXXXXX\",\n    \"amount\": 1000,\n    \"currency\": \"AUD\",\n    \"refundFeeCharged\": 0,\n    \"requestedDate\": \"2021-05-11T00:00:41.6762465Z\",\n    \"completedDate\": null,\n    \"reasonForRefund\": \"Requested by Payer\",\n    \"notes\": null,\n    \"convertedAmount\": null,\n    \"conversionRate\": null,\n    \"convertedCurrency\": null,\n    \"isGross\": false,\n    \"status\": \"requested\",\n    \"transferId\": null,\n    \"refundedFees\": null,\n    \"nonce\": \"0e44d18b-8b69-4b9f-8736-bdd86a9e4aea\"\n}"
+						},
+						{
+							"name": "403 Forbidden - Nonce Replay",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"paymentId\": \"pmt_XXXXXXXXXXXXXX\",            // Payment Id in pmt_XXXXXXXXXXXXXX format\r\n    \"amount\": 100,\r\n    \"reason\": \"Requested by Payer\",\r\n    \"nonce\": \"test1234\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/{{environment}}/refunds",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"{{environment}}",
+										"refunds"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "377"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "Request-Context",
+									"value": "appId=cid-v1:7a9feec7-06e6-4091-a7d8-f6f4ef30d688"
+								},
+								{
+									"key": "X-SourceFiles",
+									"value": "=?UTF-8?B?QzpcRGV2XEFwcHNcUGluY2hcUGluY2hcc3JjXFBpbmNoLkFwaVx0ZXN0XHJlZnVuZHM=?="
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 May 2021 02:30:05 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"isNonceReplay\": true,\n    \"id\": \"ref_XXXXXXXX\",\n    \"amount\": 100,\n    \"currency\": \"AUD\",\n    \"refundFeeCharged\": 0,\n    \"requestedDate\": \"2021-05-11T02:29:56.6079210Z\",\n    \"completedDate\": null,\n    \"reasonForRefund\": \"Requested by Payer\",\n    \"notes\": null,\n    \"convertedAmount\": null,\n    \"conversionRate\": null,\n    \"convertedCurrency\": null,\n    \"isGross\": false,\n    \"status\": \"requested\",\n    \"transferId\": null,\n    \"refundedFees\": null,\n    \"nonce\": \"test1234\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Check for Nonce",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nonce\": \"test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/{{environment}}/refunds/nonce",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"{{environment}}",
+								"refunds",
+								"nonce"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK - Nonce Exists",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nonce\": \"test1234\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/{{environment}}/refunds/nonce",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"{{environment}}",
+										"refunds",
+										"nonce"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "377"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "Request-Context",
+									"value": "appId=cid-v1:7a9feec7-06e6-4091-a7d8-f6f4ef30d688"
+								},
+								{
+									"key": "X-SourceFiles",
+									"value": "=?UTF-8?B?QzpcRGV2XEFwcHNcUGluY2hcUGluY2hcc3JjXFBpbmNoLkFwaVx0ZXN0XHJlZnVuZHNcbm9uY2U=?="
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 May 2021 04:20:36 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"isNonceReplay\": true,\n    \"id\": \"ref_XGPRRXNZ\",\n    \"amount\": 100,\n    \"currency\": \"AUD\",\n    \"refundFeeCharged\": 0,\n    \"requestedDate\": \"2021-05-11T02:29:56.6079210Z\",\n    \"completedDate\": null,\n    \"reasonForRefund\": \"Requested by Payer\",\n    \"notes\": null,\n    \"convertedAmount\": null,\n    \"conversionRate\": null,\n    \"convertedCurrency\": null,\n    \"isGross\": false,\n    \"status\": \"requested\",\n    \"transferId\": null,\n    \"refundedFees\": null,\n    \"nonce\": \"test1234\"\n}"
+						},
+						{
+							"name": "200 OK - Nonce Doesn't Exist",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nonce\": \"test12345\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/{{environment}}/refunds/nonce",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"{{environment}}",
+										"refunds",
+										"nonce"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "43"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "Request-Context",
+									"value": "appId=cid-v1:7a9feec7-06e6-4091-a7d8-f6f4ef30d688"
+								},
+								{
+									"key": "X-SourceFiles",
+									"value": "=?UTF-8?B?QzpcRGV2XEFwcHNcUGluY2hcUGluY2hcc3JjXFBpbmNoLkFwaVx0ZXN0XHJlZnVuZHNcbm9uY2U=?="
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 May 2021 04:21:17 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"isNonceReplay\": false,\n    \"nonce\": \"test12345\"\n}"
 						}
 					]
 				}
