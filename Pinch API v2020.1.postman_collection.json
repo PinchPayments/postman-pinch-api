@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "8a05fb55-e535-4efb-81e9-a84c4e0ce3aa",
 		"name": "Pinch API v2020.1",
-		"description": "This is a Postman Collection for the Pinch API v2020.1 endpoints. \n\nRefer to the main [Pinch API documentation](hhttps://docs.getpinch.com.au/docs) for more details.\n\n## Installation\n\nYou can download this Collection from a GitHub repo here: [https://github.com/pinchpayments/postman-pinch-api](https://github.com/pinchpayments/postman-pinch-api)\n\nImport to the Postman by opening the app, selecting `File -> Import` and importing the `Pinch API v2020.1.postman_collection.json` and the `Pinch API v2020.1.postman_environment.json` files.\n\n## Environment\n\nVisit [https://web.getpinch.com.au/api-keys](https://web.getpinch.com.au/api-keys) to get your test & production API keys\n\nThis Collection includes a pre-configured Environment. You will need to set up the following environment variables in order to run each request:\n\n|Name|Description|\n|---|---|\n|`merchantId`|Your Merchant Id. Starts with `mch_test_` for test.|\n|`secretKey`|Secret Key. Starts with `sk_test_` for test.|\n|`currentAccessToken`|Leave empty - populated automatically by postman.|\n|`accessTokenExpiry`|Leave empty - populated automatically by postman.|\n|`baseUrl`|https://api.getpinch.com.au|\n|`authUrl`|https://auth.getpinch.com.au|\n\n## Running the API Endpoints\n\nThe Postman pre-request script will take care of gathering a valid access token for all requests - so once you fill in the keys above with your test keys, you can call all requests without worrying about authentication.\n\n## (Optional) Collection Variables\n\n\n|Name|Description|\n|---|---|\n|`pinchVersion`|Set to `2020.1` by default. Can be changed to `2019.1`, `2017.2` or `2017.1`.|\n|`environment`|Set to `test` by default. Can be changed to `live`.|\n\n**For testing, these should be left as default values: `2020.1` and `test`.**\n\nIf you would like to run this collection against an earlier Pinch API version, you can change the `pinchVersion` property (which is sent as a header to the API with each request) to a previous version of the API. Previous versions are `2019.1`, `2017.2` and `2017.1`.\n\nIf you would like to run this collection against your production tenant you will need to change your `merchantId` and `secretKey` values set in the environment variables to the production keys and set this `environment` collection variable to `live`.",
+		"description": "This is a Postman Collection for the Pinch API v2020.1 endpoints. \n\nRefer to the main [Pinch API documentation](hhttps://docs.getpinch.com.au/docs) for more details.\n\n## Installation\n\nYou can download this Collection from a GitHub repo here: [https://github.com/pinchpayments/postman-pinch-api](https://github.com/pinchpayments/postman-pinch-api)\n\nImport to the Postman by opening the app, selecting `File -> Import` and importing the `Pinch API v2020.1.postman_collection.json` and the `Pinch API v2020.1.postman_environment.json` files.\n\n## Environment\n\nVisit [https://web.getpinch.com.au/api-keys](https://web.getpinch.com.au/api-keys) to get your test & production API keys\n\nThis Collection includes a pre-configured Environment. You will need to set up the following environment variables in order to run each request:\n\n|Name|Description|\n|---|---|\n|`merchantId`|Your Merchant Id. Starts with `mch_test_` for test.|\n|`secretKey`|Secret Key. Starts with `sk_test_` for test.|\n|`publishableKey`|Publishable Key. Starts with `pk_test_` for test.|\n|`currentAccessToken`|Leave empty - populated automatically by postman.|\n|`accessTokenExpiry`|Leave empty - populated automatically by postman.|\n|`baseUrl`|https://api.getpinch.com.au|\n|`authUrl`|https://auth.getpinch.com.au|\n\n## Running the API Endpoints\n\nThe Postman pre-request script will take care of gathering a valid access token for all requests - so once you fill in the keys above with your test keys, you can call all requests without worrying about authentication.\n\n## (Optional) Collection Variables\n\n\n|Name|Description|\n|---|---|\n|`pinchVersion`|Set to `2020.1` by default. Can be changed to `2019.1`, `2017.2` or `2017.1`.|\n|`environment`|Set to `test` by default. Can be changed to `live`.|\n\n**For testing, these should be left as default values: `2020.1` and `test`.**\n\nIf you would like to run this collection against an earlier Pinch API version, you can change the `pinchVersion` property (which is sent as a header to the API with each request) to a previous version of the API. Previous versions are `2019.1`, `2017.2` and `2017.1`.\n\nIf you would like to run this collection against your production tenant you will need to change your `merchantId` and `secretKey` values set in the environment variables to the production keys and set this `environment` collection variable to `live`.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -338,7 +338,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"sourceType\": \"credit-card\",\r\n    \"bankAccountNumber\": \"\",\r\n    \"bankAccountBsb\": \"\",\r\n    \"bankAccountName\": \"\",\r\n    \"creditCardToken\": \"tkn_LIK2WVNPLyVclLd27ULUDYWS7ki0SFYm\",\r\n    \"IpAddress\": null\r\n}",
+									"raw": "{\r\n    \"sourceType\": \"credit-card\",\r\n    \"bankAccountNumber\": \"\",\r\n    \"bankAccountBsb\": \"\",\r\n    \"bankAccountName\": \"\",\r\n    \"creditCardToken\": \"tkn_XXXXXXXXXX\",\r\n    \"IpAddress\": {{$randomIP}}\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -752,7 +752,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"id\": \"\",\n    \"fullName\": null,\n    \"firstName\": \"Test\",\n    \"lastName\": \"User\",\n    \"emailAddress\": \"test.user@mailinator.com\",\n    \"mobileNumber\": \"0000000000\",\n    \"source\": {\n        \"sourceType\": \"bank-account\",\n        \"bankAccountName\": \"Example Name\",\n        \"bankAccountBsb\": \"000000\",\n        \"bankAccountNumber\": \"000000000\",\n        \"creditCardToken\": null,\n        \"ipAddress\": \"\"\n    },\n    \"companyName\": \"Test Company\",\n    \"companyRegistrationNumber\": \"111111\",\n    \"streetAddress\": \"123 Fake st\",\n    \"suburb\": \"Teneriffe\",\n    \"state\": \"QLD\",\n    \"postcode\": \"4005\",\n    \"country\": \"Australia\",\n    \"metadata\": null\n}"
+							"raw": "{\n    \"id\": \"\",\n    \"fullName\": null,\n    \"firstName\": \"{{$randomFirstName}}\",\n    \"lastName\": \"{{$randomLastName}}\",\n    \"emailAddress\": \"{{$randomExampleEmail}}\",\n    \"mobileNumber\": \"0400000000\",\n    \"source\": {\n        \"sourceType\": \"bank-account\",\n        \"bankAccountName\": \"Example Name\",\n        \"bankAccountBsb\": \"000000\",\n        \"bankAccountNumber\": \"000000000\",\n        \"creditCardToken\": null,\n        \"ipAddress\": \"\"\n    },\n    \"companyName\": \"{{$randomCompanyName}}\",\n    \"companyRegistrationNumber\": \"123456\",\n    \"streetAddress\": \"{{$randomStreetAddress}}\",\n    \"suburb\": \"{{$randomCity}}\",\n    \"state\": \"QLD\",\n    \"postcode\": \"4005\",\n    \"country\": \"Australia\",\n    \"metadata\": null\n}"
 						},
 						"url": {
 							"raw": "{{baseUrl}}/{{environment}}/payers",
@@ -1280,7 +1280,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\": null,\r\n    \"payerId\":\"pyr_XXXXXXXXXXXXXX\",\r\n    \"amount\": 1245,\r\n    \"transactionDate\": \"2021-05-05\",\r\n    \"description\": \"A lovely bunch of coconuts.\"\r\n}",
+							"raw": "{\r\n    \"id\": null,\r\n    \"payerId\":\"pyr_XXXXXXXXXXXXXX\",\r\n    \"amount\": 1245,\r\n    \"transactionDate\": \"{{today}}\",\r\n    \"description\": \"{{$randomLoremSentence}}\",\r\n    \"nonce\": {{$guid}}\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1481,17 +1481,95 @@
 							],
 							"cookie": [],
 							"body": "[\n    {\n        \"propertyName\": \"PayerId\",\n        \"errorMessage\": \"Can't find payer with Id: pyr_XXXXXXX\",\n        \"attemptedValue\": null,\n        \"customState\": null,\n        \"severity\": 0,\n        \"errorCode\": null,\n        \"formattedMessageArguments\": null,\n        \"formattedMessagePlaceholderValues\": null,\n        \"resourceName\": null\n    }\n]"
+						},
+						{
+							"name": "403 Forbidden - Nonce Replay",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": null,\r\n    \"payerId\":\"pyr_GhJwoSz4fRggDb\",\r\n    \"amount\": 1245,\r\n    \"transactionDate\": \"{{today}}\",\r\n    \"description\": \"{{$randomLoremSentence}}\",\r\n    \"nonce\": \"test123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/{{environment}}/payments",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"{{environment}}",
+										"payments"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "1365"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "Request-Context",
+									"value": "appId=cid-v1:7a9feec7-06e6-4091-a7d8-f6f4ef30d688"
+								},
+								{
+									"key": "X-SourceFiles",
+									"value": "=?UTF-8?B?QzpcRGV2XEFwcHNcUGluY2hcUGluY2hcc3JjXFBpbmNoLkFwaVx0ZXN0XHBheW1lbnRz?="
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 May 2021 01:05:23 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"isNonceReplay\": true,\n    \"id\": \"pmt_XXXXXXXXXXXXXX\",\n    \"attemptId\": \"att_XXXXXXXX\",\n    \"amount\": 1000,\n    \"currency\": \"AUD\",\n    \"description\": \"Occaecati est nobis in quidem soluta molestiae quis explicabo.\",\n    \"applicationFee\": 0,\n    \"totalFee\": 55,\n    \"isSurcharged\": false,\n    \"sourceType\": \"credit-card\",\n    \"transactionDate\": \"2021-05-11T01:01:54.4887199Z\",\n    \"status\": \"approved\",\n    \"estimatedTransferDate\": \"2021-05-13\",\n    \"actualTransferDate\": null,\n    \"payer\": {\n        \"id\": \"pyr_XXXXXXXXXXXXXX\",\n        \"firstName\": \"ben\",\n        \"lastName\": \"hotdog\",\n        \"emailAddress\": \"ben.hotdog@mailinator.com\",\n        \"mobileNumber\": null,\n        \"streetAddress\": null,\n        \"suburb\": null,\n        \"postcode\": null,\n        \"state\": null,\n        \"country\": null,\n        \"companyName\": null,\n        \"companyRegistrationNumber\": null,\n        \"metadata\": null\n    },\n    \"subscription\": null,\n    \"attempts\": [\n        {\n            \"id\": \"att_XXXXXXXX\",\n            \"amount\": 1000,\n            \"currency\": \"AUD\",\n            \"convertedAmount\": null,\n            \"conversionRate\": null,\n            \"convertedCurrency\": null,\n            \"estimatedSettlementDate\": \"2021-05-13T00:00:00\",\n            \"isSurcharged\": false,\n            \"transactionDate\": \"2021-05-11T01:01:54.4887199Z\",\n            \"estimatedTransferDate\": \"2021-05-13\",\n            \"actualTransferDate\": null,\n            \"source\": null,\n            \"dishonour\": null,\n            \"settlement\": null,\n            \"fees\": {\n                \"transactionFee\": 55,\n                \"applicationFee\": 0,\n                \"totalFee\": 55,\n                \"currency\": \"AUD\",\n                \"taxRate\": 0.1,\n                \"convertedTransactionFee\": null,\n                \"convertedApplicationFee\": null,\n                \"convertedTotalFee\": null,\n                \"convertedCurrency\": null,\n                \"conversionRate\": null\n            },\n            \"status\": \"approved\"\n        }\n    ],\n    \"refunds\": [],\n    \"metadata\": null,\n    \"nonce\": \"test123\"\n}"
 						}
 					]
 				},
 				{
 					"name": "Create Payment - Realtime",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"payerId\": \"pyr_XXXXX\",\r\n    \"email\": \"ben.hotdog@mailinator.com\",\r\n    \"amount\": \"1245\",\r\n    \"description\": \"A sweet new hat\",\r\n    \"creditCardToken\": \"tkn_XXXXXX\"\r\n}",
+							"raw": "{\r\n    \"payerId\": \"\",                                  // PayerId to charge (if already setup)\r\n    \"email\": \"{{$randomExampleEmail}}\",             // Payer's Email\r\n    \"fullName\": \"{{$randomFullName}}\",              // Only required if no PayerId specified\r\n    \"amount\": 1000,                                 // Amount in Cents\r\n    \"description\": \"{{$randomLoremSentence}}\",      // Payment Description\r\n    \"creditCardToken\": \"tkn_XXXXXXX\",               // Token generated in the `/Tokens/Create Card Token` request. \r\n    \"nonce\" : \"{{$guid}}\"                           // Unique Per Request\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1634,6 +1712,142 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"id\": \"pmt_XXXXXXXXXXXXXX\",\n    \"attemptId\": \"att_XXXXXXXX\",\n    \"amount\": 1245,\n    \"currency\": \"AUD\",\n    \"description\": \"A sweet new hat\",\n    \"applicationFee\": 0,\n    \"totalFee\": 61,\n    \"isSurcharged\": false,\n    \"sourceType\": \"credit-card\",\n    \"transactionDate\": \"2021-04-19T05:43:01.2642435Z\",\n    \"status\": \"approved\",\n    \"estimatedTransferDate\": \"2021-04-21\",\n    \"actualTransferDate\": null,\n    \"payer\": {\n        \"id\": \"pyr_XXXXXXXXXXXXXX\",\n        \"firstName\": \"Test\",\n        \"lastName\": \"Payer\",\n        \"emailAddress\": \"test.payer@mailinator.com\",\n        \"mobileNumber\": null,\n        \"streetAddress\": null,\n        \"suburb\": null,\n        \"postcode\": null,\n        \"state\": null,\n        \"country\": null,\n        \"companyName\": null,\n        \"companyRegistrationNumber\": null,\n        \"metadata\": null\n    },\n    \"subscription\": null,\n    \"attempts\": [\n        {\n            \"id\": \"att_XXXXXXXXX\",\n            \"amount\": 1245,\n            \"currency\": \"AUD\",\n            \"convertedAmount\": null,\n            \"conversionRate\": null,\n            \"convertedCurrency\": null,\n            \"estimatedSettlementDate\": \"2021-04-21T00:00:00\",\n            \"isSurcharged\": false,\n            \"transactionDate\": \"2021-04-19T05:43:01.2642435Z\",\n            \"estimatedTransferDate\": \"2021-04-21\",\n            \"actualTransferDate\": null,\n            \"source\": {\n                \"id\": \"src_XXXXXXXXXXXXXX\",\n                \"sourceType\": \"credit-card\",\n                \"bankAccountNumber\": null,\n                \"bankAccountBsb\": null,\n                \"bankAccountName\": null,\n                \"creditCardToken\": \"tkn_XXXXXXXXXXXXXXXXXXXXXXXXXXXX\",\n                \"cardHolderName\": \"Ben Hotdog\",\n                \"expiryDate\": \"2022-12-01T00:00:00\",\n                \"displayCardNumber\": \"4242\",\n                \"cardScheme\": \"visa\",\n                \"origin\": \"AU\"\n            },\n            \"dishonour\": null,\n            \"settlement\": null,\n            \"fees\": {\n                \"transactionFee\": 61,\n                \"applicationFee\": 0,\n                \"totalFee\": 61,\n                \"currency\": \"AUD\",\n                \"taxRate\": 0.1,\n                \"convertedTransactionFee\": null,\n                \"convertedApplicationFee\": null,\n                \"convertedTotalFee\": null,\n                \"convertedCurrency\": null,\n                \"conversionRate\": null\n            },\n            \"status\": \"approved\"\n        }\n    ],\n    \"metadata\": null\n}"
+						},
+						{
+							"name": "403 Forbidden - Nonce Replay",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"payerId\": \"pyr_XXXXXXXXXXXXXX\",                                  // PayerId to charge (if already setup)\r\n    \"amount\": 1000,                                 // Amount in Cents\r\n    \"description\": \"{{$randomLoremSentence}}\",      // Payment Description\r\n    \"nonce\" : \"test123\"                           // Unique Per Request\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/{{environment}}/payments/realtime",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"{{environment}}",
+										"payments",
+										"realtime"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "1365"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "Request-Context",
+									"value": "appId=cid-v1:7a9feec7-06e6-4091-a7d8-f6f4ef30d688"
+								},
+								{
+									"key": "X-SourceFiles",
+									"value": "=?UTF-8?B?QzpcRGV2XEFwcHNcUGluY2hcUGluY2hcc3JjXFBpbmNoLkFwaVx0ZXN0XHBheW1lbnRzXHJlYWx0aW1l?="
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 May 2021 01:01:59 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"isNonceReplay\": true,\n    \"id\": \"pmt_XXXXXXXXXXXXXX\",\n    \"attemptId\": \"att_2YZ67D2D\",\n    \"amount\": 1000,\n    \"currency\": \"AUD\",\n    \"description\": \"Occaecati est nobis in quidem soluta molestiae quis explicabo.\",\n    \"applicationFee\": 0,\n    \"totalFee\": 55,\n    \"isSurcharged\": false,\n    \"sourceType\": \"credit-card\",\n    \"transactionDate\": \"2021-05-11T01:01:54.4887199Z\",\n    \"status\": \"approved\",\n    \"estimatedTransferDate\": \"2021-05-13\",\n    \"actualTransferDate\": null,\n    \"payer\": {\n        \"id\": \"pyr_XXXXXXXXXXXXXX\",\n        \"firstName\": \"ben\",\n        \"lastName\": \"hotdog\",\n        \"emailAddress\": \"ben.hotdog@mailinator.com\",\n        \"mobileNumber\": null,\n        \"streetAddress\": null,\n        \"suburb\": null,\n        \"postcode\": null,\n        \"state\": null,\n        \"country\": null,\n        \"companyName\": null,\n        \"companyRegistrationNumber\": null,\n        \"metadata\": null\n    },\n    \"subscription\": null,\n    \"attempts\": [\n        {\n            \"id\": \"att_XXXXXXXX\",\n            \"amount\": 1000,\n            \"currency\": \"AUD\",\n            \"convertedAmount\": null,\n            \"conversionRate\": null,\n            \"convertedCurrency\": null,\n            \"estimatedSettlementDate\": \"2021-05-13T00:00:00\",\n            \"isSurcharged\": false,\n            \"transactionDate\": \"2021-05-11T01:01:54.4887199Z\",\n            \"estimatedTransferDate\": \"2021-05-13\",\n            \"actualTransferDate\": null,\n            \"source\": null,\n            \"dishonour\": null,\n            \"settlement\": null,\n            \"fees\": {\n                \"transactionFee\": 55,\n                \"applicationFee\": 0,\n                \"totalFee\": 55,\n                \"currency\": \"AUD\",\n                \"taxRate\": 0.1,\n                \"convertedTransactionFee\": null,\n                \"convertedApplicationFee\": null,\n                \"convertedTotalFee\": null,\n                \"convertedCurrency\": null,\n                \"conversionRate\": null\n            },\n            \"status\": \"approved\"\n        }\n    ],\n    \"refunds\": [],\n    \"metadata\": null,\n    \"nonce\": \"test123\"\n}"
+						},
+						{
+							"name": "400 Bad Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"payerId\": \"pyr_XXXXXXXXXXXXXX\",                                  // PayerId to charge (if already setup)\r\n    \"email\": \"{{$randomExampleEmail}}\",             // Payer's Email\r\n    \"fullName\": \"{{$randomFullName}}\",              // Only required if no PayerId specified\r\n    \"amount\": 1000,                                 // Amount in Cents\r\n    \"description\": \"{{$randomLoremSentence}}\",      // Payment Description\r\n    \"creditCardToken\": \"tkn_XXXXXXX\",               // Token generated in the `/Tokens/Create Card Token` request. \r\n    \"nonce\" : \"test123\"                           // Unique Per Request\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/{{environment}}/payments/realtime",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"{{environment}}",
+										"payments",
+										"realtime"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "1090"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "Request-Context",
+									"value": "appId=cid-v1:7a9feec7-06e6-4091-a7d8-f6f4ef30d688"
+								},
+								{
+									"key": "X-SourceFiles",
+									"value": "=?UTF-8?B?QzpcRGV2XEFwcHNcUGluY2hcUGluY2hcc3JjXFBpbmNoLkFwaVx0ZXN0XHBheW1lbnRzXHJlYWx0aW1l?="
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 May 2021 01:04:17 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"propertyName\": \"PayerId\",\n        \"errorMessage\": \"Supply only a payerId (no full/first/last names) to use an existing Payer\",\n        \"attemptedValue\": \"pyr_XXXXXXXXXXXXXX\",\n        \"customState\": null,\n        \"severity\": 0,\n        \"errorCode\": \"PredicateValidator\",\n        \"formattedMessageArguments\": [],\n        \"formattedMessagePlaceholderValues\": {\n            \"PropertyName\": \"Payer Id\",\n            \"PropertyValue\": \"pyr_XXXXXXXXXXXXXX\"\n        },\n        \"resourceName\": null\n    },\n    {\n        \"propertyName\": \"FullName\",\n        \"errorMessage\": \"Supply a fullName only (no payerId or first/last names) to create a new Payer\",\n        \"attemptedValue\": \"Megan Johnson\",\n        \"customState\": null,\n        \"severity\": 0,\n        \"errorCode\": \"PredicateValidator\",\n        \"formattedMessageArguments\": [],\n        \"formattedMessagePlaceholderValues\": {\n            \"PropertyName\": \"Full Name\",\n            \"PropertyValue\": \"Megan Johnson\"\n        },\n        \"resourceName\": null\n    },\n    {\n        \"propertyName\": \"FirstName\",\n        \"errorMessage\": \"Supply at least a first name (no payerId or fullName) to create a new Payer\",\n        \"attemptedValue\": null,\n        \"customState\": null,\n        \"severity\": 0,\n        \"errorCode\": \"PredicateValidator\",\n        \"formattedMessageArguments\": [],\n        \"formattedMessagePlaceholderValues\": {\n            \"PropertyName\": \"First Name\",\n            \"PropertyValue\": null\n        },\n        \"resourceName\": null\n    }\n]"
 						}
 					]
 				},
@@ -2206,7 +2420,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"publishableKey\": \"pk_test_XXXXXXXXX\",\r\n    \"cardNumber\": \"4242424242424242\",\r\n    \"cvc\": \"123\",\r\n    \"expiryMonth\": 12,\r\n    \"expiryYear\": 2022,\r\n    \"cardHolderName\": \"Ben Hotdog\"\r\n}",
+							"raw": "{\r\n    \"publishableKey\": \"{{publishableKey}}\",\r\n    \"cardNumber\": \"4242424242424242\",\r\n    \"cvc\": \"123\",\r\n    \"expiryMonth\": 12,\r\n    \"expiryYear\": 2025,\r\n    \"cardHolderName\": \"{{$randomFullName}}\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -3138,7 +3352,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"planId\": \"pln_XXXXXXXXXXXXXX\",\r\n    \"payerId\": \"pyr_XXXXXXXXXXXXXX\",\r\n    \"totalAmount\": 100000,\r\n    \"startDate\": \"2022-05-22\",\r\n    \"surcharge\": [\r\n        \"bank-account\",\r\n        \"credit-card\"\r\n    ]\r\n}",
+							"raw": "{\r\n    \"planId\": \"pln_XXXXXXXXXXXXXX\",\r\n    \"payerId\": \"pyr_XXXXXXXXXXXXXX\",\r\n    \"totalAmount\": 100000,\r\n    \"startDate\": \"{{tomorrow}}\",\r\n    \"surcharge\": [\r\n        \"bank-account\",\r\n        \"credit-card\"\r\n    ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -3664,7 +3878,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"companyName\": \"\",\r\n    \"legalEntityName\": null,\r\n    \"companyEmail\": \"\",\r\n    \"companyPhone\": null,\r\n    \"companyWebsiteUrl\": null,\r\n    \"companyRegistrationNumber\": null,\r\n    \"bankAccountRoutingNumber\": \"\",\r\n    \"bankAccountNumber\": \"\",\r\n    \"bankAccountName\": \"\",\r\n    \"streetAddress\": null,\r\n    \"suburb\": null,\r\n    \"state\": null,\r\n    \"postcode\": null,\r\n    \"country\": \"AU\",\r\n    \"bankStatementLabel\": \"\",\r\n    \"natureOfBusiness\": null,\r\n    \"organisationType\": \"\",\r\n    \"notes\" : \"\",\r\n    \"contacts\": [\r\n        {\r\n            \"id\": \"con_\",\r\n            \"isPrimaryContact\": false,\r\n            \"firstName\": \"\",\r\n            \"lastName\": \"\",\r\n            \"email\": \"\",\r\n            \"phone\": null,\r\n            \"streetAddress\": null,\r\n            \"suburb\": null,\r\n            \"postcode\": null,\r\n            \"state\": null,\r\n            \"country\": null,\r\n            \"dob\": null,\r\n            \"governmentNumberSupplied\": false,\r\n            \"contactType\": \"\",\r\n            \"ownership\": null,\r\n            \"jobTitle\": null\r\n        }\r\n    ]\r\n}",
+							"raw": "{\r\n    \"companyName\": \"{{$randomCompanyName}}\",\r\n    \"legalEntityName\": null,\r\n    \"companyEmail\": \"{{$randomExampleEmail}}\",\r\n    \"companyPhone\": \"0400000000\",\r\n    \"companyWebsiteUrl\": {{$randomUrl}},\r\n    \"companyRegistrationNumber\": null,\r\n    \"bankAccountRoutingNumber\": \"\",\r\n    \"bankAccountNumber\": \"\",\r\n    \"bankAccountName\": \"\",\r\n    \"streetAddress\": {{$randomStreetAddress}},\r\n    \"suburb\": {{$randomCity}},\r\n    \"state\": \"QLD\",\r\n    \"postcode\": \"4000\",\r\n    \"country\": \"AU\",\r\n    \"bankStatementLabel\": \"\",\r\n    \"natureOfBusiness\": null,\r\n    \"organisationType\": \"\",\r\n    \"notes\" : \"\",\r\n    \"contacts\": [\r\n        {\r\n            \"id\": \"con_XXXXXXXXXXXXX\",\r\n            \"isPrimaryContact\": false,\r\n            \"firstName\": \"{{$randomFirstName}}\",\r\n            \"lastName\": \"{{$randomLastName}}\",\r\n            \"email\": \"{{$randomExampleEmail}}\",\r\n            \"phone\": \"0400000000\",\r\n            \"streetAddress\": {{$randomStreetAddress}},\r\n            \"suburb\": {{$randomCity}},\r\n            \"postcode\": \"4000\",\r\n            \"state\": \"QLD\",\r\n            \"country\": \"Australia\",\r\n            \"dob\": \"{{$randomDatePast}}\",\r\n            \"governmentNumberSupplied\": false,\r\n            \"contactType\": \"\",\r\n            \"ownership\": null,\r\n            \"jobTitle\": {{$randomJobTitle}}\r\n        }\r\n    ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -3969,7 +4183,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"companyName\": \"Test Managed Company\",\r\n    \"legalEntityName\": null,\r\n    \"companyEmail\": \"test.managed.company@mailinator.com\",\r\n    \"companyPhone\": null,\r\n    \"companyWebsiteUrl\": null,\r\n    \"companyRegistrationNumber\": null,\r\n    \"bankAccountRoutingNumber\": \"000000\",\r\n    \"bankAccountNumber\": \"000000000\",\r\n    \"bankAccountName\": \"Test Managed Account\",\r\n    \"streetAddress\": null,\r\n    \"suburb\": null,\r\n    \"state\": null,\r\n    \"postcode\": null,\r\n    \"country\": \"AU\",\r\n    \"bankStatementLabel\": null,\r\n    \"natureOfBusiness\": null,\r\n    \"organisationType\": \"\",\r\n    \"notes\" : \"\",\r\n    \"contacts\": [\r\n        {\r\n            \"isPrimaryContact\": false,\r\n            \"firstName\": \"\",\r\n            \"lastName\": \"\",\r\n            \"email\": \"\",\r\n            \"phone\": null,\r\n            \"streetAddress\": null,\r\n            \"suburb\": null,\r\n            \"postcode\": null,\r\n            \"state\": null,\r\n            \"country\": null,\r\n            \"dob\": null,\r\n            \"governmentNumberSupplied\": false,\r\n            \"contactType\": \"\",\r\n            \"ownership\": null,\r\n            \"jobTitle\": null\r\n        }\r\n    ]\r\n}",
+							"raw": "{\r\n    \"companyName\": \"{{$randomCompanyName}}\",\r\n    \"legalEntityName\": null,\r\n    \"companyEmail\": \"{{$randomExampleEmail}}\",\r\n    \"companyPhone\": null,\r\n    \"companyWebsiteUrl\": \"{{$randomUrl}}\",\r\n    \"companyRegistrationNumber\": null,\r\n    \"bankAccountRoutingNumber\": \"000000\",\r\n    \"bankAccountNumber\": \"000000000\",\r\n    \"bankAccountName\": \"{{$randomCompanyName}}\",\r\n    \"streetAddress\": null,\r\n    \"suburb\": null,\r\n    \"state\": null,\r\n    \"postcode\": null,\r\n    \"country\": \"AU\",\r\n    \"bankStatementLabel\": null,\r\n    \"natureOfBusiness\": null,\r\n    \"organisationType\": \"\",\r\n    \"notes\" : \"\",\r\n    \"contacts\": [\r\n        {\r\n            \"isPrimaryContact\": false,\r\n            \"firstName\": \"{{$randomFirstName}}\",\r\n            \"lastName\": \"{{$randomLastName}}\",\r\n            \"email\": \"{{$randomExampleEmail}}\",\r\n            \"phone\": \"0400000000\",\r\n            \"streetAddress\": \"{{$randomStreetAddress}}\",\r\n            \"suburb\": \"{{$randomCity}}\",\r\n            \"postcode\": \"4000\",\r\n            \"state\": null,\r\n            \"country\": null,\r\n            \"dob\": null,\r\n            \"governmentNumberSupplied\": false,\r\n            \"contactType\": \"\",\r\n            \"ownership\": null,\r\n            \"jobTitle\": \"{{$randomJobTitle}}\"\r\n        }\r\n    ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -5508,6 +5722,165 @@
 					]
 				}
 			]
+		},
+		{
+			"name": "Refunds",
+			"item": [
+				{
+					"name": "Create a Refund",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"paymentId\": \"pmt_XXXXXXXXXXXXXX\",            // Payment Id in pmt_XXXXXXXXXXXXXX format\r\n    \"amount\": 1000,\r\n    \"reason\": \"Requested by Payer\",\r\n    \"nonce\": \"{{$guid}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/{{environment}}/refunds",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"{{environment}}",
+								"refunds"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "400 Bad Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"paymentId\": \"pmt_XXXXXXXXXXXXXX\",            // Payment Id in pmt_XXXXXXXXXXXXXX format\r\n    \"amount\": 1000,\r\n    \"reason\": \"Requested by Payer\",\r\n    \"nonce\": \"{{$guid}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/{{environment}}/refunds",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"{{environment}}",
+										"refunds"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "256"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "Request-Context",
+									"value": "appId=cid-v1:7a9feec7-06e6-4091-a7d8-f6f4ef30d688"
+								},
+								{
+									"key": "X-SourceFiles",
+									"value": "=?UTF-8?B?QzpcRGV2XEFwcHNcUGluY2hcUGluY2hcc3JjXFBpbmNoLkFwaVx0ZXN0XHJlZnVuZHM=?="
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 10 May 2021 23:59:52 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"propertyName\": \"\",\n        \"errorMessage\": \"Could not find a payment with ID: pmt_XXXXXXXXXXXXXX\",\n        \"attemptedValue\": null,\n        \"customState\": null,\n        \"severity\": 0,\n        \"errorCode\": null,\n        \"formattedMessageArguments\": null,\n        \"formattedMessagePlaceholderValues\": null,\n        \"resourceName\": null\n    }\n]"
+						},
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"paymentId\": \"pmt_XXXXXXXXXXXXXX\",            // Payment Id in pmt_XXXXXXXXXXXXXX format\r\n    \"amount\": 1000,\r\n    \"reason\": \"Requested by Payer\",\r\n    \"nonce\": \"{{$guid}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/{{environment}}/refunds",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"{{environment}}",
+										"refunds"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "407"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Location",
+									"value": "https://localhost:44307/test/Refunds?id=ref_RX5P38JA"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "Request-Context",
+									"value": "appId=cid-v1:7a9feec7-06e6-4091-a7d8-f6f4ef30d688"
+								},
+								{
+									"key": "X-SourceFiles",
+									"value": "=?UTF-8?B?QzpcRGV2XEFwcHNcUGluY2hcUGluY2hcc3JjXFBpbmNoLkFwaVx0ZXN0XHJlZnVuZHM=?="
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 May 2021 00:00:41 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"isNonceReplay\": false,\n    \"id\": \"ref_XXXXXXXX\",\n    \"amount\": 1000,\n    \"currency\": \"AUD\",\n    \"refundFeeCharged\": 0,\n    \"requestedDate\": \"2021-05-11T00:00:41.6762465Z\",\n    \"completedDate\": null,\n    \"reasonForRefund\": \"Requested by Payer\",\n    \"notes\": null,\n    \"convertedAmount\": null,\n    \"conversionRate\": null,\n    \"convertedCurrency\": null,\n    \"isGross\": false,\n    \"status\": \"requested\",\n    \"transferId\": null,\n    \"refundedFees\": null,\n    \"nonce\": \"0e44d18b-8b69-4b9f-8736-bdd86a9e4aea\"\n}"
+						}
+					]
+				}
+			]
 		}
 	],
 	"auth": {
@@ -5589,7 +5962,12 @@
 					"    });",
 					"}",
 					"",
-					"pm.request.headers.add({key: 'pinch-version', value: collection_variables.pinchVersion });"
+					"pm.request.headers.add({key: 'pinch-version', value: collection_variables.pinchVersion });",
+					"",
+					"const moment = require('moment');",
+					"pm.globals.set(\"today\", moment().format(\"YYYY-MM-DD\"));",
+					"pm.globals.set(\"tomorrow\", moment().add('days', 1).format(\"YYYY-MM-DD\"));",
+					"pm.globals.set(\"yesterday\", moment().add('days', -1).format(\"YYYY-MM-DD\"));"
 				]
 			}
 		},

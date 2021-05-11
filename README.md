@@ -22,6 +22,7 @@ This Collection includes a pre-configured Environment. You will need to set up t
 |---|---|
 |`merchantId`|Your Merchant Id. Starts with `mch_test_` for test.|
 |`secretKey`|Secret Key. Starts with `sk_test_` for test.|
+|`publishableKey`|Publishable Key. Starts with `pk_test_` for test.|
 |`currentAccessToken`|Leave empty - populated automatically by postman.|
 |`accessTokenExpiry`|Leave empty - populated automatically by postman.|
 |`baseUrl`|https://api.getpinch.com.au|
