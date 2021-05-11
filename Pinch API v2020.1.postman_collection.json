@@ -1481,6 +1481,67 @@
 							],
 							"cookie": [],
 							"body": "[\n    {\n        \"propertyName\": \"PayerId\",\n        \"errorMessage\": \"Can't find payer with Id: pyr_XXXXXXX\",\n        \"attemptedValue\": null,\n        \"customState\": null,\n        \"severity\": 0,\n        \"errorCode\": null,\n        \"formattedMessageArguments\": null,\n        \"formattedMessagePlaceholderValues\": null,\n        \"resourceName\": null\n    }\n]"
+						},
+						{
+							"name": "403 Forbidden - Nonce Replay",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": null,\r\n    \"payerId\":\"pyr_GhJwoSz4fRggDb\",\r\n    \"amount\": 1245,\r\n    \"transactionDate\": \"{{today}}\",\r\n    \"description\": \"{{$randomLoremSentence}}\",\r\n    \"nonce\": \"test123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/{{environment}}/payments",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"{{environment}}",
+										"payments"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "1365"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "Request-Context",
+									"value": "appId=cid-v1:7a9feec7-06e6-4091-a7d8-f6f4ef30d688"
+								},
+								{
+									"key": "X-SourceFiles",
+									"value": "=?UTF-8?B?QzpcRGV2XEFwcHNcUGluY2hcUGluY2hcc3JjXFBpbmNoLkFwaVx0ZXN0XHBheW1lbnRz?="
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 May 2021 01:05:23 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"isNonceReplay\": true,\n    \"id\": \"pmt_XXXXXXXXXXXXXX\",\n    \"attemptId\": \"att_XXXXXXXX\",\n    \"amount\": 1000,\n    \"currency\": \"AUD\",\n    \"description\": \"Occaecati est nobis in quidem soluta molestiae quis explicabo.\",\n    \"applicationFee\": 0,\n    \"totalFee\": 55,\n    \"isSurcharged\": false,\n    \"sourceType\": \"credit-card\",\n    \"transactionDate\": \"2021-05-11T01:01:54.4887199Z\",\n    \"status\": \"approved\",\n    \"estimatedTransferDate\": \"2021-05-13\",\n    \"actualTransferDate\": null,\n    \"payer\": {\n        \"id\": \"pyr_XXXXXXXXXXXXXX\",\n        \"firstName\": \"ben\",\n        \"lastName\": \"hotdog\",\n        \"emailAddress\": \"ben.hotdog@mailinator.com\",\n        \"mobileNumber\": null,\n        \"streetAddress\": null,\n        \"suburb\": null,\n        \"postcode\": null,\n        \"state\": null,\n        \"country\": null,\n        \"companyName\": null,\n        \"companyRegistrationNumber\": null,\n        \"metadata\": null\n    },\n    \"subscription\": null,\n    \"attempts\": [\n        {\n            \"id\": \"att_XXXXXXXX\",\n            \"amount\": 1000,\n            \"currency\": \"AUD\",\n            \"convertedAmount\": null,\n            \"conversionRate\": null,\n            \"convertedCurrency\": null,\n            \"estimatedSettlementDate\": \"2021-05-13T00:00:00\",\n            \"isSurcharged\": false,\n            \"transactionDate\": \"2021-05-11T01:01:54.4887199Z\",\n            \"estimatedTransferDate\": \"2021-05-13\",\n            \"actualTransferDate\": null,\n            \"source\": null,\n            \"dishonour\": null,\n            \"settlement\": null,\n            \"fees\": {\n                \"transactionFee\": 55,\n                \"applicationFee\": 0,\n                \"totalFee\": 55,\n                \"currency\": \"AUD\",\n                \"taxRate\": 0.1,\n                \"convertedTransactionFee\": null,\n                \"convertedApplicationFee\": null,\n                \"convertedTotalFee\": null,\n                \"convertedCurrency\": null,\n                \"conversionRate\": null\n            },\n            \"status\": \"approved\"\n        }\n    ],\n    \"refunds\": [],\n    \"metadata\": null,\n    \"nonce\": \"test123\"\n}"
 						}
 					]
 				},
@@ -1651,6 +1712,142 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"id\": \"pmt_XXXXXXXXXXXXXX\",\n    \"attemptId\": \"att_XXXXXXXX\",\n    \"amount\": 1245,\n    \"currency\": \"AUD\",\n    \"description\": \"A sweet new hat\",\n    \"applicationFee\": 0,\n    \"totalFee\": 61,\n    \"isSurcharged\": false,\n    \"sourceType\": \"credit-card\",\n    \"transactionDate\": \"2021-04-19T05:43:01.2642435Z\",\n    \"status\": \"approved\",\n    \"estimatedTransferDate\": \"2021-04-21\",\n    \"actualTransferDate\": null,\n    \"payer\": {\n        \"id\": \"pyr_XXXXXXXXXXXXXX\",\n        \"firstName\": \"Test\",\n        \"lastName\": \"Payer\",\n        \"emailAddress\": \"test.payer@mailinator.com\",\n        \"mobileNumber\": null,\n        \"streetAddress\": null,\n        \"suburb\": null,\n        \"postcode\": null,\n        \"state\": null,\n        \"country\": null,\n        \"companyName\": null,\n        \"companyRegistrationNumber\": null,\n        \"metadata\": null\n    },\n    \"subscription\": null,\n    \"attempts\": [\n        {\n            \"id\": \"att_XXXXXXXXX\",\n            \"amount\": 1245,\n            \"currency\": \"AUD\",\n            \"convertedAmount\": null,\n            \"conversionRate\": null,\n            \"convertedCurrency\": null,\n            \"estimatedSettlementDate\": \"2021-04-21T00:00:00\",\n            \"isSurcharged\": false,\n            \"transactionDate\": \"2021-04-19T05:43:01.2642435Z\",\n            \"estimatedTransferDate\": \"2021-04-21\",\n            \"actualTransferDate\": null,\n            \"source\": {\n                \"id\": \"src_XXXXXXXXXXXXXX\",\n                \"sourceType\": \"credit-card\",\n                \"bankAccountNumber\": null,\n                \"bankAccountBsb\": null,\n                \"bankAccountName\": null,\n                \"creditCardToken\": \"tkn_XXXXXXXXXXXXXXXXXXXXXXXXXXXX\",\n                \"cardHolderName\": \"Ben Hotdog\",\n                \"expiryDate\": \"2022-12-01T00:00:00\",\n                \"displayCardNumber\": \"4242\",\n                \"cardScheme\": \"visa\",\n                \"origin\": \"AU\"\n            },\n            \"dishonour\": null,\n            \"settlement\": null,\n            \"fees\": {\n                \"transactionFee\": 61,\n                \"applicationFee\": 0,\n                \"totalFee\": 61,\n                \"currency\": \"AUD\",\n                \"taxRate\": 0.1,\n                \"convertedTransactionFee\": null,\n                \"convertedApplicationFee\": null,\n                \"convertedTotalFee\": null,\n                \"convertedCurrency\": null,\n                \"conversionRate\": null\n            },\n            \"status\": \"approved\"\n        }\n    ],\n    \"metadata\": null\n}"
+						},
+						{
+							"name": "403 Forbidden - Nonce Replay",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"payerId\": \"pyr_XXXXXXXXXXXXXX\",                                  // PayerId to charge (if already setup)\r\n    \"amount\": 1000,                                 // Amount in Cents\r\n    \"description\": \"{{$randomLoremSentence}}\",      // Payment Description\r\n    \"nonce\" : \"test123\"                           // Unique Per Request\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/{{environment}}/payments/realtime",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"{{environment}}",
+										"payments",
+										"realtime"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "1365"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "Request-Context",
+									"value": "appId=cid-v1:7a9feec7-06e6-4091-a7d8-f6f4ef30d688"
+								},
+								{
+									"key": "X-SourceFiles",
+									"value": "=?UTF-8?B?QzpcRGV2XEFwcHNcUGluY2hcUGluY2hcc3JjXFBpbmNoLkFwaVx0ZXN0XHBheW1lbnRzXHJlYWx0aW1l?="
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 May 2021 01:01:59 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"isNonceReplay\": true,\n    \"id\": \"pmt_XXXXXXXXXXXXXX\",\n    \"attemptId\": \"att_2YZ67D2D\",\n    \"amount\": 1000,\n    \"currency\": \"AUD\",\n    \"description\": \"Occaecati est nobis in quidem soluta molestiae quis explicabo.\",\n    \"applicationFee\": 0,\n    \"totalFee\": 55,\n    \"isSurcharged\": false,\n    \"sourceType\": \"credit-card\",\n    \"transactionDate\": \"2021-05-11T01:01:54.4887199Z\",\n    \"status\": \"approved\",\n    \"estimatedTransferDate\": \"2021-05-13\",\n    \"actualTransferDate\": null,\n    \"payer\": {\n        \"id\": \"pyr_XXXXXXXXXXXXXX\",\n        \"firstName\": \"ben\",\n        \"lastName\": \"hotdog\",\n        \"emailAddress\": \"ben.hotdog@mailinator.com\",\n        \"mobileNumber\": null,\n        \"streetAddress\": null,\n        \"suburb\": null,\n        \"postcode\": null,\n        \"state\": null,\n        \"country\": null,\n        \"companyName\": null,\n        \"companyRegistrationNumber\": null,\n        \"metadata\": null\n    },\n    \"subscription\": null,\n    \"attempts\": [\n        {\n            \"id\": \"att_XXXXXXXX\",\n            \"amount\": 1000,\n            \"currency\": \"AUD\",\n            \"convertedAmount\": null,\n            \"conversionRate\": null,\n            \"convertedCurrency\": null,\n            \"estimatedSettlementDate\": \"2021-05-13T00:00:00\",\n            \"isSurcharged\": false,\n            \"transactionDate\": \"2021-05-11T01:01:54.4887199Z\",\n            \"estimatedTransferDate\": \"2021-05-13\",\n            \"actualTransferDate\": null,\n            \"source\": null,\n            \"dishonour\": null,\n            \"settlement\": null,\n            \"fees\": {\n                \"transactionFee\": 55,\n                \"applicationFee\": 0,\n                \"totalFee\": 55,\n                \"currency\": \"AUD\",\n                \"taxRate\": 0.1,\n                \"convertedTransactionFee\": null,\n                \"convertedApplicationFee\": null,\n                \"convertedTotalFee\": null,\n                \"convertedCurrency\": null,\n                \"conversionRate\": null\n            },\n            \"status\": \"approved\"\n        }\n    ],\n    \"refunds\": [],\n    \"metadata\": null,\n    \"nonce\": \"test123\"\n}"
+						},
+						{
+							"name": "400 Bad Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"payerId\": \"pyr_XXXXXXXXXXXXXX\",                                  // PayerId to charge (if already setup)\r\n    \"email\": \"{{$randomExampleEmail}}\",             // Payer's Email\r\n    \"fullName\": \"{{$randomFullName}}\",              // Only required if no PayerId specified\r\n    \"amount\": 1000,                                 // Amount in Cents\r\n    \"description\": \"{{$randomLoremSentence}}\",      // Payment Description\r\n    \"creditCardToken\": \"tkn_XXXXXXX\",               // Token generated in the `/Tokens/Create Card Token` request. \r\n    \"nonce\" : \"test123\"                           // Unique Per Request\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/{{environment}}/payments/realtime",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"{{environment}}",
+										"payments",
+										"realtime"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "1090"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "Request-Context",
+									"value": "appId=cid-v1:7a9feec7-06e6-4091-a7d8-f6f4ef30d688"
+								},
+								{
+									"key": "X-SourceFiles",
+									"value": "=?UTF-8?B?QzpcRGV2XEFwcHNcUGluY2hcUGluY2hcc3JjXFBpbmNoLkFwaVx0ZXN0XHBheW1lbnRzXHJlYWx0aW1l?="
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 May 2021 01:04:17 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"propertyName\": \"PayerId\",\n        \"errorMessage\": \"Supply only a payerId (no full/first/last names) to use an existing Payer\",\n        \"attemptedValue\": \"pyr_XXXXXXXXXXXXXX\",\n        \"customState\": null,\n        \"severity\": 0,\n        \"errorCode\": \"PredicateValidator\",\n        \"formattedMessageArguments\": [],\n        \"formattedMessagePlaceholderValues\": {\n            \"PropertyName\": \"Payer Id\",\n            \"PropertyValue\": \"pyr_XXXXXXXXXXXXXX\"\n        },\n        \"resourceName\": null\n    },\n    {\n        \"propertyName\": \"FullName\",\n        \"errorMessage\": \"Supply a fullName only (no payerId or first/last names) to create a new Payer\",\n        \"attemptedValue\": \"Megan Johnson\",\n        \"customState\": null,\n        \"severity\": 0,\n        \"errorCode\": \"PredicateValidator\",\n        \"formattedMessageArguments\": [],\n        \"formattedMessagePlaceholderValues\": {\n            \"PropertyName\": \"Full Name\",\n            \"PropertyValue\": \"Megan Johnson\"\n        },\n        \"resourceName\": null\n    },\n    {\n        \"propertyName\": \"FirstName\",\n        \"errorMessage\": \"Supply at least a first name (no payerId or fullName) to create a new Payer\",\n        \"attemptedValue\": null,\n        \"customState\": null,\n        \"severity\": 0,\n        \"errorCode\": \"PredicateValidator\",\n        \"formattedMessageArguments\": [],\n        \"formattedMessagePlaceholderValues\": {\n            \"PropertyName\": \"First Name\",\n            \"PropertyValue\": null\n        },\n        \"resourceName\": null\n    }\n]"
 						}
 					]
 				},
