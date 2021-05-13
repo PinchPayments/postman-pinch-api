@@ -6098,6 +6098,224 @@
 					]
 				},
 				{
+					"name": "Get Refund",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/{{environment}}/refunds/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"{{environment}}",
+								"refunds",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "",
+									"description": "Refund Id in ref_XXXXXXXX format"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/{{environment}}/refunds/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"{{environment}}",
+										"refunds",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "",
+											"description": "Refund Id in ref_XXXXXXXX format"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "434"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "Request-Context",
+									"value": "appId=cid-v1:7a9feec7-06e6-4091-a7d8-f6f4ef30d688"
+								},
+								{
+									"key": "X-SourceFiles",
+									"value": "=?UTF-8?B?QzpcRGV2XEFwcHNcUGluY2hcUGluY2hcc3JjXFBpbmNoLkFwaVx0ZXN0XHJlZnVuZHNccmVmX01LUDVNS0Q0?="
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 13 May 2021 07:25:51 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"paymentId\": \"pmt_XXXXXXXXXXXXXX\",\n    \"transfer\": null,\n    \"id\": \"ref_XXXXXXXX\",\n    \"amount\": 1000,\n    \"currency\": \"AUD\",\n    \"refundFeeCharged\": 0,\n    \"requestedDate\": \"2021-05-13T07:25:38.2930268Z\",\n    \"completedDate\": null,\n    \"reasonForRefund\": \"Requested by Payer\",\n    \"notes\": null,\n    \"convertedAmount\": null,\n    \"conversionRate\": null,\n    \"convertedCurrency\": null,\n    \"isGross\": false,\n    \"status\": \"requested\",\n    \"transferId\": null,\n    \"refundedFees\": null,\n    \"nonce\": \"354c3c8e-ddd6-4bdc-8d27-ee5d2dacb9fe\"\n}"
+						},
+						{
+							"name": "400 Bad Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/{{environment}}/refunds/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"{{environment}}",
+										"refunds",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "ref_XXXXXXXX",
+											"description": "Refund Id in ref_XXXXXXXX format"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "257"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "Request-Context",
+									"value": "appId=cid-v1:7a9feec7-06e6-4091-a7d8-f6f4ef30d688"
+								},
+								{
+									"key": "X-SourceFiles",
+									"value": "=?UTF-8?B?QzpcRGV2XEFwcHNcUGluY2hcUGluY2hcc3JjXFBpbmNoLkFwaVx0ZXN0XHJlZnVuZHNccmVmX1hYWFhYWFhY?="
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 13 May 2021 07:26:40 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"propertyName\": \"refundId\",\n        \"errorMessage\": \"Could not find a Refund with Id: ref_XXXXXXXX\",\n        \"attemptedValue\": null,\n        \"customState\": null,\n        \"severity\": 0,\n        \"errorCode\": null,\n        \"formattedMessageArguments\": null,\n        \"formattedMessagePlaceholderValues\": null,\n        \"resourceName\": null\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "List Refunds",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/{{environment}}/refunds",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"{{environment}}",
+								"refunds"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/{{environment}}/refunds",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"{{environment}}",
+										"refunds"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "2230"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "Request-Context",
+									"value": "appId="
+								},
+								{
+									"key": "X-SourceFiles",
+									"value": "=?UTF-8?B?QzpcRGV2XEFwcHNcUGluY2hcUGluY2hcc3JjXFBpbmNoLkFwaVx0ZXN0XHJlZnVuZHM=?="
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 13 May 2021 07:20:20 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"page\": 1,\n    \"pageSize\": 50,\n    \"totalPages\": 1,\n    \"totalItems\": 6,\n    \"data\": [\n        {\n            \"id\": \"ref_XXXXXXXX\",\n            \"amount\": 1245,\n            \"currency\": \"AUD\",\n            \"refundFeeCharged\": 0,\n            \"requestedDate\": \"2021-05-14T05:22:00.0980330Z\",\n            \"completedDate\": null,\n            \"reasonForRefund\": \"duplicate transaction\",\n            \"notes\": null,\n            \"convertedAmount\": null,\n            \"conversionRate\": null,\n            \"convertedCurrency\": null,\n            \"isGross\": false,\n            \"status\": \"requested\",\n            \"transferId\": null,\n            \"refundedFees\": null,\n            \"nonce\": null\n        },\n        {\n            \"id\": \"ref_XXXXXXXX\",\n            \"amount\": 100,\n            \"currency\": \"AUD\",\n            \"refundFeeCharged\": 0,\n            \"requestedDate\": \"2021-05-11T02:29:56.6079210Z\",\n            \"completedDate\": null,\n            \"reasonForRefund\": \"Requested by Payer\",\n            \"notes\": null,\n            \"convertedAmount\": null,\n            \"conversionRate\": null,\n            \"convertedCurrency\": null,\n            \"isGross\": false,\n            \"status\": \"requested\",\n            \"transferId\": null,\n            \"refundedFees\": null,\n            \"nonce\": \"test1234\"\n        },\n        {\n            \"id\": \"ref_XXXXXXXX\",\n            \"amount\": 100,\n            \"currency\": \"AUD\",\n            \"refundFeeCharged\": 0,\n            \"requestedDate\": \"2021-05-11T01:08:37.2754508Z\",\n            \"completedDate\": null,\n            \"reasonForRefund\": \"Requested by Payer\",\n            \"notes\": null,\n            \"convertedAmount\": null,\n            \"conversionRate\": null,\n            \"convertedCurrency\": null,\n            \"isGross\": false,\n            \"status\": \"requested\",\n            \"transferId\": null,\n            \"refundedFees\": null,\n            \"nonce\": \"test123\"\n        },\n        {\n            \"id\": \"ref_XXXXXXXX\",\n            \"amount\": 100,\n            \"currency\": \"AUD\",\n            \"refundFeeCharged\": 0,\n            \"requestedDate\": \"2021-05-11T01:08:34.2568023Z\",\n            \"completedDate\": null,\n            \"reasonForRefund\": \"Requested by Payer\",\n            \"notes\": null,\n            \"convertedAmount\": null,\n            \"conversionRate\": null,\n            \"convertedCurrency\": null,\n            \"isGross\": false,\n            \"status\": \"requested\",\n            \"transferId\": null,\n            \"refundedFees\": null,\n            \"nonce\": \"test123\"\n        },\n        {\n            \"id\": \"ref_XXXXXXXX\",\n            \"amount\": 1000,\n            \"currency\": \"AUD\",\n            \"refundFeeCharged\": 0,\n            \"requestedDate\": \"2021-05-11T01:07:58.5216275Z\",\n            \"completedDate\": null,\n            \"reasonForRefund\": \"Requested by Payer\",\n            \"notes\": null,\n            \"convertedAmount\": null,\n            \"conversionRate\": null,\n            \"convertedCurrency\": null,\n            \"isGross\": false,\n            \"status\": \"requested\",\n            \"transferId\": null,\n            \"refundedFees\": null,\n            \"nonce\": \"test123\"\n        },\n        {\n            \"id\": \"ref_XXXXXXXX\",\n            \"amount\": 1000,\n            \"currency\": \"AUD\",\n            \"refundFeeCharged\": 0,\n            \"requestedDate\": \"2021-05-11T00:00:41.6762465Z\",\n            \"completedDate\": null,\n            \"reasonForRefund\": \"Requested by Payer\",\n            \"notes\": null,\n            \"convertedAmount\": null,\n            \"conversionRate\": null,\n            \"convertedCurrency\": null,\n            \"isGross\": false,\n            \"status\": \"requested\",\n            \"transferId\": null,\n            \"refundedFees\": null,\n            \"nonce\": \"0e44d18b-8b69-4b9f-8736-bdd86a9e4aea\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
 					"name": "Check for Nonce",
 					"request": {
 						"method": "POST",
