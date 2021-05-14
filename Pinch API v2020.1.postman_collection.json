@@ -1541,7 +1541,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"isNonceReplay\": true,\n    \"id\": \"pmt_XXXXXXXXXXXXXX\",\n    \"attemptId\": \"att_XXXXXXXX\",\n    \"amount\": 1000,\n    \"currency\": \"AUD\",\n    \"description\": \"Occaecati est nobis in quidem soluta molestiae quis explicabo.\",\n    \"applicationFee\": 0,\n    \"totalFee\": 55,\n    \"isSurcharged\": false,\n    \"sourceType\": \"credit-card\",\n    \"transactionDate\": \"2021-05-11T01:01:54.4887199Z\",\n    \"status\": \"approved\",\n    \"estimatedTransferDate\": \"2021-05-13\",\n    \"actualTransferDate\": null,\n    \"payer\": {\n        \"id\": \"pyr_XXXXXXXXXXXXXX\",\n        \"firstName\": \"ben\",\n        \"lastName\": \"hotdog\",\n        \"emailAddress\": \"ben.hotdog@mailinator.com\",\n        \"mobileNumber\": null,\n        \"streetAddress\": null,\n        \"suburb\": null,\n        \"postcode\": null,\n        \"state\": null,\n        \"country\": null,\n        \"companyName\": null,\n        \"companyRegistrationNumber\": null,\n        \"metadata\": null\n    },\n    \"subscription\": null,\n    \"attempts\": [\n        {\n            \"id\": \"att_XXXXXXXX\",\n            \"amount\": 1000,\n            \"currency\": \"AUD\",\n            \"convertedAmount\": null,\n            \"conversionRate\": null,\n            \"convertedCurrency\": null,\n            \"estimatedSettlementDate\": \"2021-05-13T00:00:00\",\n            \"isSurcharged\": false,\n            \"transactionDate\": \"2021-05-11T01:01:54.4887199Z\",\n            \"estimatedTransferDate\": \"2021-05-13\",\n            \"actualTransferDate\": null,\n            \"source\": null,\n            \"dishonour\": null,\n            \"settlement\": null,\n            \"fees\": {\n                \"transactionFee\": 55,\n                \"applicationFee\": 0,\n                \"totalFee\": 55,\n                \"currency\": \"AUD\",\n                \"taxRate\": 0.1,\n                \"convertedTransactionFee\": null,\n                \"convertedApplicationFee\": null,\n                \"convertedTotalFee\": null,\n                \"convertedCurrency\": null,\n                \"conversionRate\": null\n            },\n            \"status\": \"approved\"\n        }\n    ],\n    \"refunds\": [],\n    \"metadata\": null,\n    \"nonce\": \"test123\"\n}"
+							"body": "{\n    \"isNonceReplay\": true,\n    \"nonce\": \"test123\",\n    \"data\": {\n        \"id\": \"pmt_XXXXXXXXXXXXXX\",\n        \"attemptId\": \"att_XXXXXXXX\",\n        \"amount\": 1000,\n        \"currency\": \"AUD\",\n        \"description\": \"Occaecati est nobis in quidem soluta molestiae quis explicabo.\",\n        \"applicationFee\": 0,\n        \"totalFee\": 55,\n        \"isSurcharged\": false,\n        \"sourceType\": \"credit-card\",\n        \"transactionDate\": \"2021-05-11T01:01:54.4887199Z\",\n        \"status\": \"approved\",\n        \"estimatedTransferDate\": \"2021-05-13\",\n        \"actualTransferDate\": null,\n        \"payer\": {\n            \"id\": \"pyr_XXXXXXXXXXXXXX\",\n            \"firstName\": \"ben\",\n            \"lastName\": \"hotdog\",\n            \"emailAddress\": \"ben.hotdog@mailinator.com\",\n            \"mobileNumber\": null,\n            \"streetAddress\": null,\n            \"suburb\": null,\n            \"postcode\": null,\n            \"state\": null,\n            \"country\": null,\n            \"companyName\": null,\n            \"companyRegistrationNumber\": null,\n            \"metadata\": null\n        },\n        \"subscription\": null,\n        \"attempts\": [\n            {\n                \"id\": \"att_XXXXXXXX\",\n                \"amount\": 1000,\n                \"currency\": \"AUD\",\n                \"convertedAmount\": null,\n                \"conversionRate\": null,\n                \"convertedCurrency\": null,\n                \"estimatedSettlementDate\": \"2021-05-13T00:00:00\",\n                \"isSurcharged\": false,\n                \"transactionDate\": \"2021-05-11T01:01:54.4887199Z\",\n                \"estimatedTransferDate\": \"2021-05-13\",\n                \"actualTransferDate\": null,\n                \"source\": null,\n                \"dishonour\": null,\n                \"settlement\": null,\n                \"fees\": {\n                    \"transactionFee\": 55,\n                    \"applicationFee\": 0,\n                    \"totalFee\": 55,\n                    \"currency\": \"AUD\",\n                    \"taxRate\": 0.1,\n                    \"convertedTransactionFee\": null,\n                    \"convertedApplicationFee\": null,\n                    \"convertedTotalFee\": null,\n                    \"convertedCurrency\": null,\n                    \"conversionRate\": null\n                },\n                \"status\": \"approved\"\n            }\n        ],\n        \"refunds\": [],\n        \"metadata\": null,\n        \"nonce\": \"test123\"\n    }\n}"
 						}
 					]
 				},
@@ -1714,74 +1714,6 @@
 							"body": "{\n    \"id\": \"pmt_XXXXXXXXXXXXXX\",\n    \"attemptId\": \"att_XXXXXXXX\",\n    \"amount\": 1245,\n    \"currency\": \"AUD\",\n    \"description\": \"A sweet new hat\",\n    \"applicationFee\": 0,\n    \"totalFee\": 61,\n    \"isSurcharged\": false,\n    \"sourceType\": \"credit-card\",\n    \"transactionDate\": \"2021-04-19T05:43:01.2642435Z\",\n    \"status\": \"approved\",\n    \"estimatedTransferDate\": \"2021-04-21\",\n    \"actualTransferDate\": null,\n    \"payer\": {\n        \"id\": \"pyr_XXXXXXXXXXXXXX\",\n        \"firstName\": \"Test\",\n        \"lastName\": \"Payer\",\n        \"emailAddress\": \"test.payer@mailinator.com\",\n        \"mobileNumber\": null,\n        \"streetAddress\": null,\n        \"suburb\": null,\n        \"postcode\": null,\n        \"state\": null,\n        \"country\": null,\n        \"companyName\": null,\n        \"companyRegistrationNumber\": null,\n        \"metadata\": null\n    },\n    \"subscription\": null,\n    \"attempts\": [\n        {\n            \"id\": \"att_XXXXXXXXX\",\n            \"amount\": 1245,\n            \"currency\": \"AUD\",\n            \"convertedAmount\": null,\n            \"conversionRate\": null,\n            \"convertedCurrency\": null,\n            \"estimatedSettlementDate\": \"2021-04-21T00:00:00\",\n            \"isSurcharged\": false,\n            \"transactionDate\": \"2021-04-19T05:43:01.2642435Z\",\n            \"estimatedTransferDate\": \"2021-04-21\",\n            \"actualTransferDate\": null,\n            \"source\": {\n                \"id\": \"src_XXXXXXXXXXXXXX\",\n                \"sourceType\": \"credit-card\",\n                \"bankAccountNumber\": null,\n                \"bankAccountBsb\": null,\n                \"bankAccountName\": null,\n                \"creditCardToken\": \"tkn_XXXXXXXXXXXXXXXXXXXXXXXXXXXX\",\n                \"cardHolderName\": \"Ben Hotdog\",\n                \"expiryDate\": \"2022-12-01T00:00:00\",\n                \"displayCardNumber\": \"4242\",\n                \"cardScheme\": \"visa\",\n                \"origin\": \"AU\"\n            },\n            \"dishonour\": null,\n            \"settlement\": null,\n            \"fees\": {\n                \"transactionFee\": 61,\n                \"applicationFee\": 0,\n                \"totalFee\": 61,\n                \"currency\": \"AUD\",\n                \"taxRate\": 0.1,\n                \"convertedTransactionFee\": null,\n                \"convertedApplicationFee\": null,\n                \"convertedTotalFee\": null,\n                \"convertedCurrency\": null,\n                \"conversionRate\": null\n            },\n            \"status\": \"approved\"\n        }\n    ],\n    \"metadata\": null\n}"
 						},
 						{
-							"name": "403 Forbidden - Nonce Replay",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"payerId\": \"pyr_XXXXXXXXXXXXXX\",                                  // PayerId to charge (if already setup)\r\n    \"amount\": 1000,                                 // Amount in Cents\r\n    \"description\": \"{{$randomLoremSentence}}\",      // Payment Description\r\n    \"nonce\" : \"test123\"                           // Unique Per Request\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{baseUrl}}/{{environment}}/payments/realtime",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"{{environment}}",
-										"payments",
-										"realtime"
-									]
-								}
-							},
-							"status": "Forbidden",
-							"code": 403,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Content-Length",
-									"value": "1365"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Server",
-									"value": "Microsoft-IIS/10.0"
-								},
-								{
-									"key": "Request-Context",
-									"value": "appId=cid-v1:7a9feec7-06e6-4091-a7d8-f6f4ef30d688"
-								},
-								{
-									"key": "X-SourceFiles",
-									"value": "=?UTF-8?B?QzpcRGV2XEFwcHNcUGluY2hcUGluY2hcc3JjXFBpbmNoLkFwaVx0ZXN0XHBheW1lbnRzXHJlYWx0aW1l?="
-								},
-								{
-									"key": "X-Powered-By",
-									"value": "ASP.NET"
-								},
-								{
-									"key": "Date",
-									"value": "Tue, 11 May 2021 01:01:59 GMT"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"isNonceReplay\": true,\n    \"id\": \"pmt_XXXXXXXXXXXXXX\",\n    \"attemptId\": \"att_2YZ67D2D\",\n    \"amount\": 1000,\n    \"currency\": \"AUD\",\n    \"description\": \"Occaecati est nobis in quidem soluta molestiae quis explicabo.\",\n    \"applicationFee\": 0,\n    \"totalFee\": 55,\n    \"isSurcharged\": false,\n    \"sourceType\": \"credit-card\",\n    \"transactionDate\": \"2021-05-11T01:01:54.4887199Z\",\n    \"status\": \"approved\",\n    \"estimatedTransferDate\": \"2021-05-13\",\n    \"actualTransferDate\": null,\n    \"payer\": {\n        \"id\": \"pyr_XXXXXXXXXXXXXX\",\n        \"firstName\": \"ben\",\n        \"lastName\": \"hotdog\",\n        \"emailAddress\": \"ben.hotdog@mailinator.com\",\n        \"mobileNumber\": null,\n        \"streetAddress\": null,\n        \"suburb\": null,\n        \"postcode\": null,\n        \"state\": null,\n        \"country\": null,\n        \"companyName\": null,\n        \"companyRegistrationNumber\": null,\n        \"metadata\": null\n    },\n    \"subscription\": null,\n    \"attempts\": [\n        {\n            \"id\": \"att_XXXXXXXX\",\n            \"amount\": 1000,\n            \"currency\": \"AUD\",\n            \"convertedAmount\": null,\n            \"conversionRate\": null,\n            \"convertedCurrency\": null,\n            \"estimatedSettlementDate\": \"2021-05-13T00:00:00\",\n            \"isSurcharged\": false,\n            \"transactionDate\": \"2021-05-11T01:01:54.4887199Z\",\n            \"estimatedTransferDate\": \"2021-05-13\",\n            \"actualTransferDate\": null,\n            \"source\": null,\n            \"dishonour\": null,\n            \"settlement\": null,\n            \"fees\": {\n                \"transactionFee\": 55,\n                \"applicationFee\": 0,\n                \"totalFee\": 55,\n                \"currency\": \"AUD\",\n                \"taxRate\": 0.1,\n                \"convertedTransactionFee\": null,\n                \"convertedApplicationFee\": null,\n                \"convertedTotalFee\": null,\n                \"convertedCurrency\": null,\n                \"conversionRate\": null\n            },\n            \"status\": \"approved\"\n        }\n    ],\n    \"refunds\": [],\n    \"metadata\": null,\n    \"nonce\": \"test123\"\n}"
-						},
-						{
 							"name": "400 Bad Request",
 							"originalRequest": {
 								"method": "POST",
@@ -1848,6 +1780,74 @@
 							],
 							"cookie": [],
 							"body": "[\n    {\n        \"propertyName\": \"PayerId\",\n        \"errorMessage\": \"Supply only a payerId (no full/first/last names) to use an existing Payer\",\n        \"attemptedValue\": \"pyr_XXXXXXXXXXXXXX\",\n        \"customState\": null,\n        \"severity\": 0,\n        \"errorCode\": \"PredicateValidator\",\n        \"formattedMessageArguments\": [],\n        \"formattedMessagePlaceholderValues\": {\n            \"PropertyName\": \"Payer Id\",\n            \"PropertyValue\": \"pyr_XXXXXXXXXXXXXX\"\n        },\n        \"resourceName\": null\n    },\n    {\n        \"propertyName\": \"FullName\",\n        \"errorMessage\": \"Supply a fullName only (no payerId or first/last names) to create a new Payer\",\n        \"attemptedValue\": \"Megan Johnson\",\n        \"customState\": null,\n        \"severity\": 0,\n        \"errorCode\": \"PredicateValidator\",\n        \"formattedMessageArguments\": [],\n        \"formattedMessagePlaceholderValues\": {\n            \"PropertyName\": \"Full Name\",\n            \"PropertyValue\": \"Megan Johnson\"\n        },\n        \"resourceName\": null\n    },\n    {\n        \"propertyName\": \"FirstName\",\n        \"errorMessage\": \"Supply at least a first name (no payerId or fullName) to create a new Payer\",\n        \"attemptedValue\": null,\n        \"customState\": null,\n        \"severity\": 0,\n        \"errorCode\": \"PredicateValidator\",\n        \"formattedMessageArguments\": [],\n        \"formattedMessagePlaceholderValues\": {\n            \"PropertyName\": \"First Name\",\n            \"PropertyValue\": null\n        },\n        \"resourceName\": null\n    }\n]"
+						},
+						{
+							"name": "403 Forbidden - Nonce Replay",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"payerId\": \"pyr_GIHT1k4WVVuCoD\",                                  // PayerId to charge (if already setup)\r\n    \"email\": \"{{$randomExampleEmail}}\",             // Payer's Email\r\n    //\"fullName\": \"{{$randomFullName}}\",              // Only required if no PayerId specified\r\n    \"amount\": 1000,                                 // Amount in Cents\r\n    \"description\": \"{{$randomLoremSentence}}\",      // Payment Description\r\n    \"creditCardToken\": \"\",               // Token generated in the `/Tokens/Create Card Token` request. \r\n    \"nonce\" : \"fdb06000-9d3f-4738-ab45-d8d9c7984e93\"                           // Unique Per Request\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/{{environment}}/payments/realtime",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"{{environment}}",
+										"payments",
+										"realtime"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "1457"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "Request-Context",
+									"value": "appId=cid-v1:7a9feec7-06e6-4091-a7d8-f6f4ef30d688"
+								},
+								{
+									"key": "X-SourceFiles",
+									"value": "=?UTF-8?B?QzpcRGV2XEFwcHNcUGluY2hcUGluY2hcc3JjXFBpbmNoLkFwaVx0ZXN0XHBheW1lbnRzXHJlYWx0aW1l?="
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 14 May 2021 00:50:14 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"isNonceReplay\": true,\n    \"nonce\": \"fdb06000-9d3f-4738-ab45-d8d9c7984e93\",\n    \"data\": {\n        \"id\": \"pmt_XXXXXXXXXXXXXX\",\n        \"attemptId\": \"att_XXXXXXXX\",\n        \"amount\": 1000,\n        \"currency\": \"AUD\",\n        \"description\": \"Quis molestias labore incidunt voluptate repellat magni recusandae et.\",\n        \"applicationFee\": 0,\n        \"totalFee\": 55,\n        \"isSurcharged\": false,\n        \"sourceType\": \"credit-card\",\n        \"transactionDate\": \"2021-05-14T00:49:55.7510577Z\",\n        \"status\": \"approved\",\n        \"estimatedTransferDate\": \"2021-05-18\",\n        \"actualTransferDate\": null,\n        \"payer\": {\n            \"id\": \"pyr_XXXXXXXXXXXXXX\",\n            \"firstName\": \"Alex\",\n            \"lastName\": \"Fadel\",\n            \"emailAddress\": \"Willis_Wyman@example.com\",\n            \"mobileNumber\": null,\n            \"streetAddress\": null,\n            \"suburb\": null,\n            \"postcode\": null,\n            \"state\": null,\n            \"country\": null,\n            \"companyName\": null,\n            \"companyRegistrationNumber\": null,\n            \"metadata\": null\n        },\n        \"subscription\": null,\n        \"attempts\": [\n            {\n                \"id\": \"att_XXXXXXXX\",\n                \"amount\": 1000,\n                \"currency\": \"AUD\",\n                \"convertedAmount\": null,\n                \"conversionRate\": null,\n                \"convertedCurrency\": null,\n                \"estimatedSettlementDate\": \"2021-05-18T00:00:00\",\n                \"isSurcharged\": false,\n                \"transactionDate\": \"2021-05-14T00:49:55.7510577Z\",\n                \"estimatedTransferDate\": \"2021-05-18\",\n                \"actualTransferDate\": null,\n                \"source\": null,\n                \"dishonour\": null,\n                \"settlement\": null,\n                \"fees\": {\n                    \"transactionFee\": 55,\n                    \"applicationFee\": 0,\n                    \"totalFee\": 55,\n                    \"currency\": \"AUD\",\n                    \"taxRate\": 0.1,\n                    \"convertedTransactionFee\": null,\n                    \"convertedApplicationFee\": null,\n                    \"convertedTotalFee\": null,\n                    \"convertedCurrency\": null,\n                    \"conversionRate\": null\n                },\n                \"status\": \"approved\"\n            }\n        ],\n        \"refunds\": [],\n        \"metadata\": null,\n        \"nonce\": \"fdb06000-9d3f-4738-ab45-d8d9c7984e93\"\n    }\n}"
 						}
 					]
 				},
@@ -2410,15 +2410,12 @@
 				},
 				{
 					"name": "Check for Nonce",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
-						"method": "GET",
+						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nonce\": \"test1234\"\r\n}",
+							"raw": "{\r\n    \"nonce\": \"fdb06000-9d3f-4738-ab45-d8d9c7984e93\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2438,68 +2435,6 @@
 						}
 					},
 					"response": [
-						{
-							"name": "200 OK - Nonce Exists",
-							"originalRequest": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"nonce\": \"601cfd9b-9af8-4809-9cd3-69884c49b153\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{baseUrl}}/{{environment}}/payments/nonce",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"{{environment}}",
-										"payments",
-										"nonce"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Content-Length",
-									"value": "1376"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Server",
-									"value": "Microsoft-IIS/10.0"
-								},
-								{
-									"key": "Request-Context",
-									"value": "appId=cid-v1:7a9feec7-06e6-4091-a7d8-f6f4ef30d688"
-								},
-								{
-									"key": "X-SourceFiles",
-									"value": "=?UTF-8?B?QzpcRGV2XEFwcHNcUGluY2hcUGluY2hcc3JjXFBpbmNoLkFwaVx0ZXN0XHBheW1lbnRzXG5vbmNl?="
-								},
-								{
-									"key": "X-Powered-By",
-									"value": "ASP.NET"
-								},
-								{
-									"key": "Date",
-									"value": "Tue, 11 May 2021 04:31:15 GMT"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"isNonceReplay\": true,\n    \"id\": \"pmt_XXXXXXXXXXXXXX\",\n    \"attemptId\": \"att_XXXXXXXXX\",\n    \"amount\": 1000,\n    \"currency\": \"AUD\",\n    \"description\": \"Omnis magnam tempora necessitatibus quisquam.\",\n    \"applicationFee\": 0,\n    \"totalFee\": 55,\n    \"isSurcharged\": false,\n    \"sourceType\": \"credit-card\",\n    \"transactionDate\": \"2021-05-11T04:30:32.5107634Z\",\n    \"status\": \"approved\",\n    \"estimatedTransferDate\": \"2021-05-13\",\n    \"actualTransferDate\": null,\n    \"payer\": {\n        \"id\": \"pyr_XXXXXXXXXXXXXX\",\n        \"firstName\": \"Alex\",\n        \"lastName\": \"Fadel\",\n        \"emailAddress\": \"Willis_Wyman@example.com\",\n        \"mobileNumber\": null,\n        \"streetAddress\": null,\n        \"suburb\": null,\n        \"postcode\": null,\n        \"state\": null,\n        \"country\": null,\n        \"companyName\": null,\n        \"companyRegistrationNumber\": null,\n        \"metadata\": null\n    },\n    \"subscription\": null,\n    \"attempts\": [\n        {\n            \"id\": \"att_XXXXXXXX\",\n            \"amount\": 1000,\n            \"currency\": \"AUD\",\n            \"convertedAmount\": null,\n            \"conversionRate\": null,\n            \"convertedCurrency\": null,\n            \"estimatedSettlementDate\": \"2021-05-13T00:00:00\",\n            \"isSurcharged\": false,\n            \"transactionDate\": \"2021-05-11T04:30:32.5107634Z\",\n            \"estimatedTransferDate\": \"2021-05-13\",\n            \"actualTransferDate\": null,\n            \"source\": null,\n            \"dishonour\": null,\n            \"settlement\": null,\n            \"fees\": {\n                \"transactionFee\": 55,\n                \"applicationFee\": 0,\n                \"totalFee\": 55,\n                \"currency\": \"AUD\",\n                \"taxRate\": 0.1,\n                \"convertedTransactionFee\": null,\n                \"convertedApplicationFee\": null,\n                \"convertedTotalFee\": null,\n                \"convertedCurrency\": null,\n                \"conversionRate\": null\n            },\n            \"status\": \"approved\"\n        }\n    ],\n    \"refunds\": [],\n    \"metadata\": null,\n    \"nonce\": \"601cfd9b-9af8-4809-9cd3-69884c49b153\"\n}"
-						},
 						{
 							"name": "200 OK - Nonce Doesn't Exist",
 							"originalRequest": {
@@ -2560,7 +2495,69 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"isNonceReplay\": false,\n    \"nonce\": \"test456\"\n}"
+							"body": "{\n    \"isNonceReplay\": false,\n    \"nonce\": \"test456\",\n    \"data\": null\n}"
+						},
+						{
+							"name": "200 OK - Nonce Exists",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nonce\": \"fdb06000-9d3f-4738-ab45-d8d9c7984e93\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/{{environment}}/payments/nonce",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"{{environment}}",
+										"payments",
+										"nonce"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "1457"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "Request-Context",
+									"value": "appId=cid-v1:7a9feec7-06e6-4091-a7d8-f6f4ef30d688"
+								},
+								{
+									"key": "X-SourceFiles",
+									"value": "=?UTF-8?B?QzpcRGV2XEFwcHNcUGluY2hcUGluY2hcc3JjXFBpbmNoLkFwaVx0ZXN0XHBheW1lbnRzXG5vbmNl?="
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 14 May 2021 00:53:03 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"isNonceReplay\": true,\n    \"nonce\": \"fdb06000-9d3f-4738-ab45-d8d9c7984e93\",\n    \"data\": {\n        \"id\": \"pmt_XXXXXXXXXXXXXX\",\n        \"attemptId\": \"att_XXXXXXXXX\",\n        \"amount\": 1000,\n        \"currency\": \"AUD\",\n        \"description\": \"Quis molestias labore incidunt voluptate repellat magni recusandae et.\",\n        \"applicationFee\": 0,\n        \"totalFee\": 55,\n        \"isSurcharged\": false,\n        \"sourceType\": \"credit-card\",\n        \"transactionDate\": \"2021-05-14T00:49:55.7510577Z\",\n        \"status\": \"approved\",\n        \"estimatedTransferDate\": \"2021-05-18\",\n        \"actualTransferDate\": null,\n        \"payer\": {\n            \"id\": \"pyr_XXXXXXXXXXXXXX\",\n            \"firstName\": \"Alex\",\n            \"lastName\": \"Fadel\",\n            \"emailAddress\": \"Willis_Wyman@example.com\",\n            \"mobileNumber\": null,\n            \"streetAddress\": null,\n            \"suburb\": null,\n            \"postcode\": null,\n            \"state\": null,\n            \"country\": null,\n            \"companyName\": null,\n            \"companyRegistrationNumber\": null,\n            \"metadata\": null\n        },\n        \"subscription\": null,\n        \"attempts\": [\n            {\n                \"id\": \"att_XXXXXXXX\",\n                \"amount\": 1000,\n                \"currency\": \"AUD\",\n                \"convertedAmount\": null,\n                \"conversionRate\": null,\n                \"convertedCurrency\": null,\n                \"estimatedSettlementDate\": \"2021-05-18T00:00:00\",\n                \"isSurcharged\": false,\n                \"transactionDate\": \"2021-05-14T00:49:55.7510577Z\",\n                \"estimatedTransferDate\": \"2021-05-18\",\n                \"actualTransferDate\": null,\n                \"source\": null,\n                \"dishonour\": null,\n                \"settlement\": null,\n                \"fees\": {\n                    \"transactionFee\": 55,\n                    \"applicationFee\": 0,\n                    \"totalFee\": 55,\n                    \"currency\": \"AUD\",\n                    \"taxRate\": 0.1,\n                    \"convertedTransactionFee\": null,\n                    \"convertedApplicationFee\": null,\n                    \"convertedTotalFee\": null,\n                    \"convertedCurrency\": null,\n                    \"conversionRate\": null\n                },\n                \"status\": \"approved\"\n            }\n        ],\n        \"refunds\": [],\n        \"metadata\": null,\n        \"nonce\": \"fdb06000-9d3f-4738-ab45-d8d9c7984e93\"\n    }\n}"
 						}
 					]
 				}
@@ -5976,7 +5973,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"paymentId\": \"pmt_XXXXXXXXXXXXXX\",            // Payment Id in pmt_XXXXXXXXXXXXXX format\r\n    \"amount\": 1000,\r\n    \"reason\": \"Requested by Payer\",\r\n    \"nonce\": \"{{$guid}}\"\r\n}",
+									"raw": "{\r\n    \"paymentId\": \"pmt_OG2N5TAWtYJCMX\",            // Payment Id in pmt_XXXXXXXXXXXXXX format\r\n    \"amount\": 100,\r\n    \"reason\": \"Requested by Payer\",\r\n    \"nonce\": \"{{$guid}}\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -6000,7 +5997,7 @@
 							"header": [
 								{
 									"key": "Content-Length",
-									"value": "407"
+									"value": "422"
 								},
 								{
 									"key": "Content-Type",
@@ -6008,7 +6005,7 @@
 								},
 								{
 									"key": "Location",
-									"value": "https://localhost:44307/test/Refunds?id=ref_RX5P38JA"
+									"value": "https://localhost:44307/test/Refunds?id=ref_995DGQ38"
 								},
 								{
 									"key": "Server",
@@ -6016,7 +6013,7 @@
 								},
 								{
 									"key": "Request-Context",
-									"value": "appId=cid-v1:7a9feec7-06e6-4091-a7d8-f6f4ef30d688"
+									"value": "appId="
 								},
 								{
 									"key": "X-SourceFiles",
@@ -6028,11 +6025,11 @@
 								},
 								{
 									"key": "Date",
-									"value": "Tue, 11 May 2021 00:00:41 GMT"
+									"value": "Fri, 14 May 2021 00:08:12 GMT"
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"isNonceReplay\": false,\n    \"id\": \"ref_XXXXXXXX\",\n    \"amount\": 1000,\n    \"currency\": \"AUD\",\n    \"refundFeeCharged\": 0,\n    \"requestedDate\": \"2021-05-11T00:00:41.6762465Z\",\n    \"completedDate\": null,\n    \"reasonForRefund\": \"Requested by Payer\",\n    \"notes\": null,\n    \"convertedAmount\": null,\n    \"conversionRate\": null,\n    \"convertedCurrency\": null,\n    \"isGross\": false,\n    \"status\": \"requested\",\n    \"transferId\": null,\n    \"refundedFees\": null,\n    \"nonce\": \"0e44d18b-8b69-4b9f-8736-bdd86a9e4aea\"\n}"
+							"body": "{\n    \"id\": \"ref_995DGQ38\",\n    \"amount\": 100,\n    \"currency\": \"AUD\",\n    \"refundFeeCharged\": 0,\n    \"requestedDate\": \"2021-05-14T00:08:11.7803470Z\",\n    \"submittedDate\": null,\n    \"completedDate\": null,\n    \"reasonForRefund\": \"Requested by Payer\",\n    \"notes\": null,\n    \"convertedAmount\": null,\n    \"conversionRate\": null,\n    \"convertedCurrency\": null,\n    \"isGross\": false,\n    \"status\": \"requested\",\n    \"paymentId\": null,\n    \"transferId\": null,\n    \"refundedFees\": null,\n    \"nonce\": \"5781b2f0-9a09-4579-bbb8-eea734633b13\"\n}"
 						},
 						{
 							"name": "403 Forbidden - Nonce Replay",
@@ -6041,7 +6038,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"paymentId\": \"pmt_XXXXXXXXXXXXXX\",            // Payment Id in pmt_XXXXXXXXXXXXXX format\r\n    \"amount\": 100,\r\n    \"reason\": \"Requested by Payer\",\r\n    \"nonce\": \"test1234\"\r\n}",
+									"raw": "{\r\n    \"paymentId\": \"pmt_OG2N5TAWtYJCMX\",            // Payment Id in pmt_XXXXXXXXXXXXXX format\r\n    \"amount\": 100,\r\n    \"reason\": \"Requested by Payer\",\r\n    \"nonce\": \"5781b2f0-9a09-4579-bbb8-eea734633b13\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -6065,7 +6062,7 @@
 							"header": [
 								{
 									"key": "Content-Length",
-									"value": "377"
+									"value": "499"
 								},
 								{
 									"key": "Content-Type",
@@ -6089,11 +6086,11 @@
 								},
 								{
 									"key": "Date",
-									"value": "Tue, 11 May 2021 02:30:05 GMT"
+									"value": "Fri, 14 May 2021 00:09:27 GMT"
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"isNonceReplay\": true,\n    \"id\": \"ref_XXXXXXXX\",\n    \"amount\": 100,\n    \"currency\": \"AUD\",\n    \"refundFeeCharged\": 0,\n    \"requestedDate\": \"2021-05-11T02:29:56.6079210Z\",\n    \"completedDate\": null,\n    \"reasonForRefund\": \"Requested by Payer\",\n    \"notes\": null,\n    \"convertedAmount\": null,\n    \"conversionRate\": null,\n    \"convertedCurrency\": null,\n    \"isGross\": false,\n    \"status\": \"requested\",\n    \"transferId\": null,\n    \"refundedFees\": null,\n    \"nonce\": \"test1234\"\n}"
+							"body": "{\n    \"isNonceReplay\": true,\n    \"nonce\": \"5781b2f0-9a09-4579-bbb8-eea734633b13\",\n    \"data\": {\n        \"id\": \"ref_995DGQ38\",\n        \"amount\": 100,\n        \"currency\": \"AUD\",\n        \"refundFeeCharged\": 0,\n        \"requestedDate\": \"2021-05-14T00:08:11.7803470Z\",\n        \"submittedDate\": null,\n        \"completedDate\": null,\n        \"reasonForRefund\": \"Requested by Payer\",\n        \"notes\": null,\n        \"convertedAmount\": null,\n        \"conversionRate\": null,\n        \"convertedCurrency\": null,\n        \"isGross\": false,\n        \"status\": \"requested\",\n        \"paymentId\": null,\n        \"transferId\": null,\n        \"refundedFees\": null,\n        \"nonce\": \"5781b2f0-9a09-4579-bbb8-eea734633b13\"\n    }\n}"
 						}
 					]
 				},
@@ -6250,13 +6247,31 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/{{environment}}/refunds",
+							"raw": "{{baseUrl}}/{{environment}}/refunds?page&pageSize&startDate&endDate",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
 								"{{environment}}",
 								"refunds"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": null
+								},
+								{
+									"key": "pageSize",
+									"value": null
+								},
+								{
+									"key": "startDate",
+									"value": null
+								},
+								{
+									"key": "endDate",
+									"value": null
+								}
 							]
 						}
 					},
@@ -6402,7 +6417,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"isNonceReplay\": true,\n    \"id\": \"ref_XGPRRXNZ\",\n    \"amount\": 100,\n    \"currency\": \"AUD\",\n    \"refundFeeCharged\": 0,\n    \"requestedDate\": \"2021-05-11T02:29:56.6079210Z\",\n    \"completedDate\": null,\n    \"reasonForRefund\": \"Requested by Payer\",\n    \"notes\": null,\n    \"convertedAmount\": null,\n    \"conversionRate\": null,\n    \"convertedCurrency\": null,\n    \"isGross\": false,\n    \"status\": \"requested\",\n    \"transferId\": null,\n    \"refundedFees\": null,\n    \"nonce\": \"test1234\"\n}"
+							"body": "{\n    \"isNonceReplay\": true,\n    \"nonce\": \"test1234\",\n    \"data\": {\n        \"id\": \"ref_XGPRRXNZ\",\n        \"amount\": 100,\n        \"currency\": \"AUD\",\n        \"refundFeeCharged\": 0,\n        \"requestedDate\": \"2021-05-11T02:29:56.6079210Z\",\n        \"submittedDate\": null,\n        \"completedDate\": null,\n        \"reasonForRefund\": \"Requested by Payer\",\n        \"notes\": null,\n        \"convertedAmount\": null,\n        \"conversionRate\": null,\n        \"convertedCurrency\": null,\n        \"isGross\": false,\n        \"status\": \"requested\",\n        \"paymentId\": null,\n        \"transferId\": null,\n        \"refundedFees\": null,\n        \"nonce\": \"test1234\"\n    }\n}"
 						},
 						{
 							"name": "200 OK - Nonce Doesn't Exist",
@@ -6464,7 +6479,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"isNonceReplay\": false,\n    \"nonce\": \"test12345\"\n}"
+							"body": "{\n    \"isNonceReplay\": false,\n    \"nonce\": \"test\",\n    \"data\": null\n}"
 						}
 					]
 				}
