@@ -1,6 +1,6 @@
 ![image](https://user-images.githubusercontent.com/241857/116962566-a6291600-ace9-11eb-9084-d0e303274f4f.png)
 
-# Postman Collection for the Pinch API
+# Postman Collection for Pinch API
 
 This is a Postman Collection for the Pinch API v2020.1 endpoints. 
 
