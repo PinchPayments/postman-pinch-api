@@ -338,7 +338,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"sourceType\": \"credit-card\",\r\n    \"bankAccountNumber\": \"\",\r\n    \"bankAccountBsb\": \"\",\r\n    \"bankAccountName\": \"\",\r\n    \"creditCardToken\": \"tkn_XXXXXXXXXX\",\r\n    \"IpAddress\": {{$randomIP}}\r\n}",
+									"raw": "{\r\n    \"sourceType\": \"credit-card\",\r\n    \"bankAccountNumber\": \"\",\r\n    \"bankAccountBsb\": \"\",\r\n    \"bankAccountName\": \"\",\r\n    \"creditCardToken\": \"tkn_XXXXXXXXXX\",\r\n    \"IpAddress\": \"{{$randomIP}}\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -752,7 +752,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"id\": \"\",\n    \"fullName\": null,\n    \"firstName\": \"{{$randomFirstName}}\",\n    \"lastName\": \"{{$randomLastName}}\",\n    \"emailAddress\": \"{{$randomExampleEmail}}\",\n    \"mobileNumber\": \"0400000000\",\n    \"source\": {\n        \"sourceType\": \"bank-account\",\n        \"bankAccountName\": \"Example Name\",\n        \"bankAccountBsb\": \"000000\",\n        \"bankAccountNumber\": \"000000000\",\n        \"creditCardToken\": null,\n        \"ipAddress\": \"\"\n    },\n    \"companyName\": \"{{$randomCompanyName}}\",\n    \"companyRegistrationNumber\": \"123456\",\n    \"streetAddress\": \"{{$randomStreetAddress}}\",\n    \"suburb\": \"{{$randomCity}}\",\n    \"state\": \"QLD\",\n    \"postcode\": \"4005\",\n    \"country\": \"Australia\",\n    \"metadata\": null\n}"
+							"raw": "{\n    \"id\": \"\",\n    \"fullName\": null,\n    \"firstName\": \"{{$randomFirstName}}\",\n    \"lastName\": \"{{$randomLastName}}\",\n    \"emailAddress\": \"{{$randomExampleEmail}}\",\n    \"mobileNumber\": \"0400000000\",\n    \"source\": {\n        \"sourceType\": \"bank-account\",\n        \"bankAccountName\": \"Example Name\",\n        \"bankAccountBsb\": \"123456\",\n        \"bankAccountNumber\": \"123456789\",\n        \"creditCardToken\": null,\n        \"ipAddress\": \"{{$randomIP}}\"\n    },\n    \"companyName\": \"{{$randomCompanyName}}\",\n    \"companyRegistrationNumber\": \"123456\",\n    \"streetAddress\": \"{{$randomStreetAddress}}\",\n    \"suburb\": \"{{$randomCity}}\",\n    \"state\": \"QLD\",\n    \"postcode\": \"4005\",\n    \"country\": \"Australia\",\n    \"metadata\": null\n}"
 						},
 						"url": {
 							"raw": "{{baseUrl}}/{{environment}}/payers",
@@ -2715,6 +2715,33 @@
 							"body": "[\n    {\n        \"propertyName\": \"\",\n        \"errorMessage\": \"Invalid publishable key: pk_test_XXXXXXXXX\",\n        \"attemptedValue\": null,\n        \"customState\": null,\n        \"severity\": 0,\n        \"errorCode\": null,\n        \"formattedMessageArguments\": null,\n        \"formattedMessagePlaceholderValues\": null,\n        \"resourceName\": null\n    }\n]"
 						}
 					]
+				},
+				{
+					"name": "Create Bank Account Token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"publishableKey\": \"{{publishableKey}}\",\r\n    \"bankAccountName\": \"{{$randomFullName}}\",\r\n    \"bankAccountRouting\": \"000009\",\r\n    \"bankAccountNumber\": \"000000009\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/{{environment}}/tokens",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"{{environment}}",
+								"tokens"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -2728,7 +2755,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\": \"\",    \r\n    \"name\": \"20% Deposit with 20% Monthly\",\r\n    \"fixedPayments\": [\r\n        {\r\n            \"amountInCents\": null,\r\n            \"amountPercentage\": 0.20,\r\n            \"description\": \"Upfront deposit\",\r\n            \"cancelPlanOnFailure\": true,\r\n            \"scheduledDateInterval\": \"days\",\r\n            \"scheduledDateOffset\": 0\r\n        }\r\n    ],\r\n    \"recurringPayment\": {\r\n        \"amountInCents\": null,\r\n        \"amountPercentage\": 0.2,\r\n        \"description\": \"Monthly Repayment\",\r\n        \"cancelPlanOnFailure\": false,\r\n        \"startDateInterval\": \"months\",\r\n        \"startDateOffset\": \"1\",\r\n        \"endDateInterval\": null,\r\n        \"endDateOffset\": null,\r\n        \"frequencyInterval\": \"months\",\r\n        \"frequencyOffset\": 1,\r\n        \"endAfterNumberOfPayments\": null,\r\n        \"endAfterTotalAmount\": null,\r\n        \"endType\": \"subscription-fully-paid\"\r\n    },\r\n    \"metadata\": \"\"\r\n}",
+							"raw": "{\r\n    \"id\": \"\",    \r\n    \"name\": \"Fixed amount upfront paid weekly\",    \r\n    \"recurringPayment\": {\r\n        \"amountInCents\": 3000,\r\n        \"amountPercentage\": null,\r\n        \"description\": \"Weekly Repayment\",\r\n        \"cancelPlanOnFailure\": false,\r\n        \"startDateInterval\": null,\r\n        \"startDateOffset\": \"0\",\r\n        \"endDateInterval\": null,\r\n        \"endDateOffset\": null,\r\n        \"frequencyInterval\": \"days\",\r\n        \"frequencyOffset\": 7,\r\n        \"endAfterNumberOfPayments\": null,\r\n        \"endAfterTotalAmount\": 3000,\r\n        \"endType\": \"subscription-fully-paid\"\r\n    },\r\n    \"metadata\": \"\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
