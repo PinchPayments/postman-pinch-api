@@ -1280,7 +1280,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\": null,\r\n    \"payerId\":\"pyr_XXXXXXXXXXXXXX\",\r\n    \"amount\": 1245,\r\n    \"transactionDate\": \"{{today}}\",\r\n    \"description\": \"{{$randomLoremSentence}}\",\r\n    \"nonce\": {{$guid}}\r\n}",
+							"raw": "{\r\n    \"id\": null,\r\n    \"payerId\":\"pyr_XXXXXXXXXXXXXX\",\r\n    \"amount\": 1245,\r\n    \"transactionDate\": \"{{today}}\",\r\n    \"description\": \"{{$randomLoremSentence}}\",\r\n    \"nonce\": \"{{$guid}}\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
